@@ -7,11 +7,12 @@ using System.Data.Entity;
 
 namespace Repositories.Repositories
 {
-    public interface IManufactureRepo : IRepository<tblUser>
+    public interface IManufactureRepo : IRepository<tblManufacturer>
     {
 
+      
     }
-    public class ManufactureRepo : Repository<tblUser>, IManufactureRepo
+    public class ManufactureRepo : Repository<tblManufacturer>, IManufactureRepo
     {
         public ManufactureRepo(DbContext context) : base(context)
         {
