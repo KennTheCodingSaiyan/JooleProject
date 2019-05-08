@@ -12,14 +12,19 @@ namespace Repositories
         DbContext Context;
         public IConsumerRepo consumer;
         public IProductRepo product;
+        public IManufactureRepo manufacture;
+
 
         public UnitOfWork(DbContext context)
         {
             this.Context = context;
             consumer = new ConsumerRepo(context);
             product = new ProductRepo(context);
+            manufacture = new ManufactureRepo(context);
+
+
             //add attrs
-        } 
+        }
 
         public void SaveChanges()
         {
