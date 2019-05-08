@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="joole_team1ModelStoreContainer" CdmEntityContainer="joole_team1Entities">
+    <EntitySetMapping Name="tblCategories">
+      <EntityTypeMapping TypeName="joole_team1Model.tblCategory">
+        <MappingFragment StoreEntitySet="tblCategory">
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+          <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCities">
+      <EntityTypeMapping TypeName="joole_team1Model.tblCity">
+        <MappingFragment StoreEntitySet="tblCity">
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+          <ScalarProperty Name="State_ID" ColumnName="State_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCredentials">
+      <EntityTypeMapping TypeName="joole_team1Model.tblCredential">
+        <MappingFragment StoreEntitySet="tblCredential">
+          <ScalarProperty Name="Credential_ID" ColumnName="Credential_ID" />
+          <ScalarProperty Name="User_Type" ColumnName="User_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDepartments">
+      <EntityTypeMapping TypeName="joole_team1Model.tblDepartment">
+        <MappingFragment StoreEntitySet="tblDepartment">
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Manufacturer_ID" ColumnName="Manufacturer_ID" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Phone" ColumnName="Department_Phone" />
+          <ScalarProperty Name="Department_Email" ColumnName="Department_Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDocuments">
+      <EntityTypeMapping TypeName="joole_team1Model.tblDocument">
+        <MappingFragment StoreEntitySet="tblDocument">
+          <ScalarProperty Name="Document_ID" ColumnName="Document_ID" />
+          <ScalarProperty Name="Document_Folder_Path" ColumnName="Document_Folder_Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFeedBacks">
+      <EntityTypeMapping TypeName="joole_team1Model.tblFeedBack">
+        <MappingFragment StoreEntitySet="tblFeedBack">
+          <ScalarProperty Name="FeedBack_ID" ColumnName="FeedBack_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Feedback_Time" ColumnName="Feedback_Time" />
+          <ScalarProperty Name="Feedback_Score" ColumnName="Feedback_Score" />
+          <ScalarProperty Name="Feedback_Content" ColumnName="Feedback_Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblManufacturers">
+      <EntityTypeMapping TypeName="joole_team1Model.tblManufacturer">
+        <MappingFragment StoreEntitySet="tblManufacturer">
+          <ScalarProperty Name="Manufacturer_ID" ColumnName="Manufacturer_ID" />
+          <ScalarProperty Name="Manufacturer_Name" ColumnName="Manufacturer_Name" />
+          <ScalarProperty Name="Manufacturer_Department" ColumnName="Manufacturer_Department" />
+          <ScalarProperty Name="Manufacturer_Web" ColumnName="Manufacturer_Web" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProducts">
+      <EntityTypeMapping TypeName="joole_team1Model.tblProduct">
+        <MappingFragment StoreEntitySet="tblProduct">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Manufacturer_ID" ColumnName="Manufacturer_ID" />
+          <ScalarProperty Name="Sales_ID" ColumnName="Sales_ID" />
+          <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Product_Image" ColumnName="Product_Image" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Model_Year" ColumnName="Model_Year" />
+          <ScalarProperty Name="Series_Info" ColumnName="Series_Info" />
+          <ScalarProperty Name="Document_ID" ColumnName="Document_ID" />
+          <ScalarProperty Name="Featured" ColumnName="Featured" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProjects">
+      <EntityTypeMapping TypeName="joole_team1Model.tblProject">
+        <MappingFragment StoreEntitySet="tblProject">
+          <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Project_Address1" ColumnName="Project_Address1" />
+          <ScalarProperty Name="Project_Address2" ColumnName="Project_Address2" />
+          <ScalarProperty Name="Project_City" ColumnName="Project_City" />
+          <ScalarProperty Name="Project_State" ColumnName="Project_State" />
+          <ScalarProperty Name="Project_Size" ColumnName="Project_Size" />
+          <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProjToProds">
+      <EntityTypeMapping TypeName="joole_team1Model.tblProjToProd">
+        <MappingFragment StoreEntitySet="tblProjToProd">
+          <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProperties">
+      <EntityTypeMapping TypeName="joole_team1Model.tblProperty">
+        <MappingFragment StoreEntitySet="tblProperty">
+          <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
+          <ScalarProperty Name="Property_Name" ColumnName="Property_Name" />
+          <ScalarProperty Name="IsType" ColumnName="IsType" />
+          <ScalarProperty Name="IsTechSpec" ColumnName="IsTechSpec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPropertyValues">
+      <EntityTypeMapping TypeName="joole_team1Model.tblPropertyValue">
+        <MappingFragment StoreEntitySet="tblPropertyValue">
+          <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSales">
+      <EntityTypeMapping TypeName="joole_team1Model.tblSale">
+        <MappingFragment StoreEntitySet="tblSales">
+          <ScalarProperty Name="Sales_ID" ColumnName="Sales_ID" />
+          <ScalarProperty Name="Sales_Name" ColumnName="Sales_Name" />
+          <ScalarProperty Name="Sales_Phone" ColumnName="Sales_Phone" />
+          <ScalarProperty Name="Sales_Email" ColumnName="Sales_Email" />
+          <ScalarProperty Name="Sales_Web" ColumnName="Sales_Web" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStates">
+      <EntityTypeMapping TypeName="joole_team1Model.tblState">
+        <MappingFragment StoreEntitySet="tblState">
+          <ScalarProperty Name="State_ID" ColumnName="State_ID" />
+          <ScalarProperty Name="State_Name" ColumnName="State_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSubCategories">
+      <EntityTypeMapping TypeName="joole_team1Model.tblSubCategory">
+        <MappingFragment StoreEntitySet="tblSubCategory">
+          <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+          <ScalarProperty Name="SubCategory_Name" ColumnName="SubCategory_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTechSpecFilters">
+      <EntityTypeMapping TypeName="joole_team1Model.tblTechSpecFilter">
+        <MappingFragment StoreEntitySet="tblTechSpecFilter">
+          <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
+          <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
+          <ScalarProperty Name="Min_Value" ColumnName="Min_Value" />
+          <ScalarProperty Name="Max_Value" ColumnName="Max_Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTypeFilters">
+      <EntityTypeMapping TypeName="joole_team1Model.tblTypeFilter">
+        <MappingFragment StoreEntitySet="tblTypeFilter">
+          <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
+          <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
+          <ScalarProperty Name="Type_Name" ColumnName="Type_Name" />
+          <ScalarProperty Name="Type_Options" ColumnName="Type_Options" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="joole_team1Model.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+          <ScalarProperty Name="User_Image" ColumnName="User_Image" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="Credential_ID" ColumnName="Credential_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

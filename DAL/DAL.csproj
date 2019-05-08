@@ -61,6 +61,8 @@
       <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -132,23 +134,100 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JooleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JooleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JooleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JooleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JooleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCategory.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCity.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCredential.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblDepartment.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblDocument.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblFeedBack.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblManufacturer.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblProduct.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblProject.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblProjToProd.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblProperty.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblPropertyValue.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSale.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblState.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSubCategory.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblTechSpecFilter.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblTypeFilter.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblUser.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Models\JooleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JooleModel.edmx</DependentUpon>
+      <LastGenOutput>JooleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\JooleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JooleModel.edmx</DependentUpon>
+      <LastGenOutput>JooleModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\JooleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>JooleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\JooleModel.edmx.diagram">
+      <DependentUpon>JooleModel.edmx</DependentUpon>
+    </Content>
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -165,17 +244,6 @@
     <None Include="_bin_deployableAssemblies\amd64\sqlceca40.dll" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -183,32 +251,17 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -30,7 +30,8 @@ namespace Repositories.Repositories
 
         public TEntity GetByID(int id)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return context.Set<TEntity>().Find(id);
         }
 
         public void Insert(TEntity entity)
