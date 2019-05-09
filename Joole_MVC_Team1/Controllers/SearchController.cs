@@ -17,14 +17,9 @@ namespace Joole_MVC_Team1.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult SearchPage(int id)
+        public ActionResult Search(int categoryId, int subCategoryId)
         {
-            return View();
-        }
-
-        public ActionResult Search()
-        {
+            var filters = service.ShowSpecFiltersForSubCategory(subCategoryId);
             return View();
         }
 
