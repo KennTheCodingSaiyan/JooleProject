@@ -4,47 +4,47 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="966d3229f78342fa9736d9aeb0057f9b" Name="Diagram1" ZoomLevel="73">
-        <EntityTypeShape EntityType="joole_team1Model.tblCategory" Width="1.5" PointX="6" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblCity" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblCredential" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblDepartment" Width="1.5" PointX="7.5" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblDocument" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblFeedBack" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblManufacturer" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblProduct" Width="1.5" PointX="10.5" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblProject" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblProjToProd" Width="1.5" PointX="12.75" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblProperty" Width="1.5" PointX="10.5" PointY="16.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblPropertyValue" Width="1.5" PointX="12.75" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblSale" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblState" Width="1.5" PointX="3.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblSubCategory" Width="1.5" PointX="8.25" PointY="18" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblTechSpecFilter" Width="1.5" PointX="12.75" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblTypeFilter" Width="1.5" PointX="12.75" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="joole_team1Model.tblUser" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <AssociationConnector Association="joole_team1Model.FK__tblSubCat__Categ__403A8C7D" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblCity__State_I__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProjec__Proje__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblUser__Credent__44FF419A" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblDepart__Manuf__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProduc__Docum__35BCFE0A" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblFeedBa__Produ__32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblFeedBa__User___33D4B598" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblManufa__User___34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProduc__Manuf__36B12243" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProduc__Sales__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProduc__SubCa__38996AB5" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProjTo__Produ__3C69FB99" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProper__Produ__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProjec__Proje__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProjec__User___3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProjTo__Proje__3D5E1FD2" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblProper__Prope__3F466844" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblTechSp__Prope__412EB0B6" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblTypeFi__Prope__4316F928" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblTechSp__SubCa__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="joole_team1Model.FK__tblTypeFi__SubCa__440B1D61" ManuallyRouted="false" />
+      <Diagram DiagramId="dddb412237be49d88d881d08b50154c6" Name="Diagram1">
+        <EntityTypeShape EntityType="jooleModel.tblCategory" Width="1.5" PointX="6" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblCity" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblCredential" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblDepartment" Width="1.5" PointX="7.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblDocument" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblFeedBack" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblManufacturer" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblProduct" Width="1.5" PointX="10.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblProject" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblProjToProd" Width="1.5" PointX="12.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblProperty" Width="1.5" PointX="10.5" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblPropertyValue" Width="1.5" PointX="12.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblSale" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblState" Width="1.5" PointX="3.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblSubCategory" Width="1.5" PointX="8.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblTechSpecFilter" Width="1.5" PointX="12.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblTypeFilter" Width="1.5" PointX="12.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="jooleModel.tblUser" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="jooleModel.FK__tblSubCat__Categ__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblCity__State_I__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProjec__Proje__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblUser__Credent__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblDepart__Manuf__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProduc__Docum__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblFeedBa__Produ__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblFeedBa__User___5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblManufa__User___44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProduc__Manuf__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProduc__Sales__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProduc__SubCa__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProjTo__Produ__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProper__Produ__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProjec__Proje__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProjec__User___59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProjTo__Proje__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblProper__Prope__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblTechSp__Prope__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblTypeFi__Prope__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblTechSp__SubCa__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="jooleModel.FK__tblTypeFi__SubCa__60A75C0F" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

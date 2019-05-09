@@ -136,9 +136,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CategoryRepo.cs" />
     <Compile Include="Repositories\ConsumerRepo.cs" />
+    <Compile Include="Repositories\ManufactureRepo.cs" />
     <Compile Include="Repositories\ProductRepo.cs" />
+    <Compile Include="Repositories\PropertyRepo.cs" />
+    <Compile Include="Repositories\PropertyValueRepo.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\SubCategoryRepo.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

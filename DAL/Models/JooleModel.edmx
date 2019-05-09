@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="joole_team1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="jooleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblCategory">
           <Key>
             <PropertyRef Name="Category_ID" />
@@ -74,7 +74,7 @@
           <Property Name="Sales_ID" Type="int" />
           <Property Name="SubCategory_ID" Type="int" />
           <Property Name="Product_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Product_Image" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Product_Image" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Series" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Model_Year" Type="date" Nullable="false" />
@@ -179,7 +179,7 @@
           <Property Name="User_Password" Type="binary" MaxLength="64" Nullable="false" />
           <Property Name="Credential_ID" Type="int" />
         </EntityType>
-        <Association Name="FK__tblCity__State_I__30F848ED">
+        <Association Name="FK__tblCity__State_I__5629CD9C">
           <End Role="tblState" Type="Self.tblState" Multiplicity="0..1" />
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="*" />
           <ReferentialConstraint>
@@ -191,7 +191,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblDepart__Manuf__31EC6D26">
+        <Association Name="FK__tblDepart__Manuf__47DBAE45">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="0..1" />
           <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -203,7 +203,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__Produ__32E0915F">
+        <Association Name="FK__tblFeedBa__Produ__5165187F">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -215,7 +215,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__User___33D4B598">
+        <Association Name="FK__tblFeedBa__User___5070F446">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -227,7 +227,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblManufa__User___34C8D9D1">
+        <Association Name="FK__tblManufa__User___44FF419A">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -239,7 +239,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Docum__35BCFE0A">
+        <Association Name="FK__tblProduc__Docum__4D94879B">
           <End Role="tblDocument" Type="Self.tblDocument" Multiplicity="0..1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -251,7 +251,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Manuf__36B12243">
+        <Association Name="FK__tblProduc__Manuf__4AB81AF0">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="0..1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -263,7 +263,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Sales__37A5467C">
+        <Association Name="FK__tblProduc__Sales__4BAC3F29">
           <End Role="tblSales" Type="Self.tblSales" Multiplicity="0..1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -275,7 +275,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__SubCa__38996AB5">
+        <Association Name="FK__tblProduc__SubCa__4CA06362">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="0..1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -287,7 +287,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__398D8EEE">
+        <Association Name="FK__tblProjec__Proje__59FA5E80">
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="0..1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -299,7 +299,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__3A81B327">
+        <Association Name="FK__tblProjec__Proje__5AEE82B9">
           <End Role="tblState" Type="Self.tblState" Multiplicity="0..1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -311,7 +311,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__User___3B75D760">
+        <Association Name="FK__tblProjec__User___59063A47">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -323,7 +323,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjTo__Produ__3C69FB99">
+        <Association Name="FK__tblProjTo__Produ__6C190EBB">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblProjToProd" Type="Self.tblProjToProd" Multiplicity="*" />
           <ReferentialConstraint>
@@ -335,7 +335,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjTo__Proje__3D5E1FD2">
+        <Association Name="FK__tblProjTo__Proje__6B24EA82">
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="1" />
           <End Role="tblProjToProd" Type="Self.tblProjToProd" Multiplicity="*" />
           <ReferentialConstraint>
@@ -347,7 +347,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Produ__3E52440B">
+        <Association Name="FK__tblProper__Produ__6477ECF3">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -359,7 +359,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Prope__3F466844">
+        <Association Name="FK__tblProper__Prope__6383C8BA">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -371,7 +371,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblSubCat__Categ__403A8C7D">
+        <Association Name="FK__tblSubCat__Categ__398D8EEE">
           <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="0..1" />
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -383,7 +383,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__Prope__412EB0B6">
+        <Association Name="FK__tblTechSp__Prope__6754599E">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -395,7 +395,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__SubCa__4222D4EF">
+        <Association Name="FK__tblTechSp__SubCa__68487DD7">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -407,7 +407,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__Prope__4316F928">
+        <Association Name="FK__tblTypeFi__Prope__5FB337D6">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -419,7 +419,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__SubCa__440B1D61">
+        <Association Name="FK__tblTypeFi__SubCa__60A75C0F">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -431,7 +431,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblUser__Credent__44FF419A">
+        <Association Name="FK__tblUser__Credent__4222D4EF">
           <End Role="tblCredential" Type="Self.tblCredential" Multiplicity="0..1" />
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -443,7 +443,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="joole_team1ModelStoreContainer">
+        <EntityContainer Name="jooleModelStoreContainer">
           <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCity" EntityType="Self.tblCity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCredential" EntityType="Self.tblCredential" Schema="dbo" store:Type="Tables" />
@@ -462,91 +462,91 @@
           <EntitySet Name="tblTechSpecFilter" EntityType="Self.tblTechSpecFilter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblTypeFilter" EntityType="Self.tblTypeFilter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tblCity__State_I__30F848ED" Association="Self.FK__tblCity__State_I__30F848ED">
+          <AssociationSet Name="FK__tblCity__State_I__5629CD9C" Association="Self.FK__tblCity__State_I__5629CD9C">
             <End Role="tblState" EntitySet="tblState" />
             <End Role="tblCity" EntitySet="tblCity" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblDepart__Manuf__31EC6D26" Association="Self.FK__tblDepart__Manuf__31EC6D26">
+          <AssociationSet Name="FK__tblDepart__Manuf__47DBAE45" Association="Self.FK__tblDepart__Manuf__47DBAE45">
             <End Role="tblManufacturer" EntitySet="tblManufacturer" />
             <End Role="tblDepartment" EntitySet="tblDepartment" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__Produ__32E0915F" Association="Self.FK__tblFeedBa__Produ__32E0915F">
+          <AssociationSet Name="FK__tblFeedBa__Produ__5165187F" Association="Self.FK__tblFeedBa__Produ__5165187F">
             <End Role="tblProduct" EntitySet="tblProduct" />
             <End Role="tblFeedBack" EntitySet="tblFeedBack" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__User___33D4B598" Association="Self.FK__tblFeedBa__User___33D4B598">
+          <AssociationSet Name="FK__tblFeedBa__User___5070F446" Association="Self.FK__tblFeedBa__User___5070F446">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblFeedBack" EntitySet="tblFeedBack" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblManufa__User___34C8D9D1" Association="Self.FK__tblManufa__User___34C8D9D1">
+          <AssociationSet Name="FK__tblManufa__User___44FF419A" Association="Self.FK__tblManufa__User___44FF419A">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblManufacturer" EntitySet="tblManufacturer" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Docum__35BCFE0A" Association="Self.FK__tblProduc__Docum__35BCFE0A">
+          <AssociationSet Name="FK__tblProduc__Docum__4D94879B" Association="Self.FK__tblProduc__Docum__4D94879B">
             <End Role="tblDocument" EntitySet="tblDocument" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Manuf__36B12243" Association="Self.FK__tblProduc__Manuf__36B12243">
+          <AssociationSet Name="FK__tblProduc__Manuf__4AB81AF0" Association="Self.FK__tblProduc__Manuf__4AB81AF0">
             <End Role="tblManufacturer" EntitySet="tblManufacturer" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Sales__37A5467C" Association="Self.FK__tblProduc__Sales__37A5467C">
+          <AssociationSet Name="FK__tblProduc__Sales__4BAC3F29" Association="Self.FK__tblProduc__Sales__4BAC3F29">
             <End Role="tblSales" EntitySet="tblSales" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__SubCa__38996AB5" Association="Self.FK__tblProduc__SubCa__38996AB5">
+          <AssociationSet Name="FK__tblProduc__SubCa__4CA06362" Association="Self.FK__tblProduc__SubCa__4CA06362">
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__398D8EEE" Association="Self.FK__tblProjec__Proje__398D8EEE">
+          <AssociationSet Name="FK__tblProjec__Proje__59FA5E80" Association="Self.FK__tblProjec__Proje__59FA5E80">
             <End Role="tblCity" EntitySet="tblCity" />
             <End Role="tblProject" EntitySet="tblProject" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__3A81B327" Association="Self.FK__tblProjec__Proje__3A81B327">
+          <AssociationSet Name="FK__tblProjec__Proje__5AEE82B9" Association="Self.FK__tblProjec__Proje__5AEE82B9">
             <End Role="tblState" EntitySet="tblState" />
             <End Role="tblProject" EntitySet="tblProject" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__User___3B75D760" Association="Self.FK__tblProjec__User___3B75D760">
+          <AssociationSet Name="FK__tblProjec__User___59063A47" Association="Self.FK__tblProjec__User___59063A47">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblProject" EntitySet="tblProject" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjTo__Produ__3C69FB99" Association="Self.FK__tblProjTo__Produ__3C69FB99">
+          <AssociationSet Name="FK__tblProjTo__Produ__6C190EBB" Association="Self.FK__tblProjTo__Produ__6C190EBB">
             <End Role="tblProduct" EntitySet="tblProduct" />
             <End Role="tblProjToProd" EntitySet="tblProjToProd" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjTo__Proje__3D5E1FD2" Association="Self.FK__tblProjTo__Proje__3D5E1FD2">
+          <AssociationSet Name="FK__tblProjTo__Proje__6B24EA82" Association="Self.FK__tblProjTo__Proje__6B24EA82">
             <End Role="tblProject" EntitySet="tblProject" />
             <End Role="tblProjToProd" EntitySet="tblProjToProd" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Produ__3E52440B" Association="Self.FK__tblProper__Produ__3E52440B">
+          <AssociationSet Name="FK__tblProper__Produ__6477ECF3" Association="Self.FK__tblProper__Produ__6477ECF3">
             <End Role="tblProduct" EntitySet="tblProduct" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValue" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Prope__3F466844" Association="Self.FK__tblProper__Prope__3F466844">
+          <AssociationSet Name="FK__tblProper__Prope__6383C8BA" Association="Self.FK__tblProper__Prope__6383C8BA">
             <End Role="tblProperty" EntitySet="tblProperty" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValue" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblSubCat__Categ__403A8C7D" Association="Self.FK__tblSubCat__Categ__403A8C7D">
+          <AssociationSet Name="FK__tblSubCat__Categ__398D8EEE" Association="Self.FK__tblSubCat__Categ__398D8EEE">
             <End Role="tblCategory" EntitySet="tblCategory" />
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__Prope__412EB0B6" Association="Self.FK__tblTechSp__Prope__412EB0B6">
+          <AssociationSet Name="FK__tblTechSp__Prope__6754599E" Association="Self.FK__tblTechSp__Prope__6754599E">
             <End Role="tblProperty" EntitySet="tblProperty" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__SubCa__4222D4EF" Association="Self.FK__tblTechSp__SubCa__4222D4EF">
+          <AssociationSet Name="FK__tblTechSp__SubCa__68487DD7" Association="Self.FK__tblTechSp__SubCa__68487DD7">
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__Prope__4316F928" Association="Self.FK__tblTypeFi__Prope__4316F928">
+          <AssociationSet Name="FK__tblTypeFi__Prope__5FB337D6" Association="Self.FK__tblTypeFi__Prope__5FB337D6">
             <End Role="tblProperty" EntitySet="tblProperty" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__SubCa__440B1D61" Association="Self.FK__tblTypeFi__SubCa__440B1D61">
+          <AssociationSet Name="FK__tblTypeFi__SubCa__60A75C0F" Association="Self.FK__tblTypeFi__SubCa__60A75C0F">
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblUser__Credent__44FF419A" Association="Self.FK__tblUser__Credent__44FF419A">
+          <AssociationSet Name="FK__tblUser__Credent__4222D4EF" Association="Self.FK__tblUser__Credent__4222D4EF">
             <End Role="tblCredential" EntitySet="tblCredential" />
             <End Role="tblUser" EntitySet="tblUser" />
           </AssociationSet>
@@ -555,14 +555,14 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="joole_team1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="jooleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="tblCategory">
           <Key>
             <PropertyRef Name="Category_ID" />
           </Key>
           <Property Name="Category_ID" Type="Int32" Nullable="false" />
           <Property Name="Category_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tblSubCategories" Relationship="Self.FK__tblSubCat__Categ__403A8C7D" FromRole="tblCategory" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblSubCategories" Relationship="Self.FK__tblSubCat__Categ__398D8EEE" FromRole="tblCategory" ToRole="tblSubCategory" />
         </EntityType>
         <EntityType Name="tblCity">
           <Key>
@@ -571,8 +571,8 @@
           <Property Name="City_ID" Type="Int32" Nullable="false" />
           <Property Name="City_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="State_ID" Type="Int32" />
-          <NavigationProperty Name="tblState" Relationship="Self.FK__tblCity__State_I__30F848ED" FromRole="tblCity" ToRole="tblState" />
-          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__398D8EEE" FromRole="tblCity" ToRole="tblProject" />
+          <NavigationProperty Name="tblState" Relationship="Self.FK__tblCity__State_I__5629CD9C" FromRole="tblCity" ToRole="tblState" />
+          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__59FA5E80" FromRole="tblCity" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblCredential">
           <Key>
@@ -580,7 +580,7 @@
           </Key>
           <Property Name="Credential_ID" Type="Int32" Nullable="false" />
           <Property Name="User_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tblUsers" Relationship="Self.FK__tblUser__Credent__44FF419A" FromRole="tblCredential" ToRole="tblUser" />
+          <NavigationProperty Name="tblUsers" Relationship="Self.FK__tblUser__Credent__4222D4EF" FromRole="tblCredential" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="tblDepartment">
           <Key>
@@ -591,7 +591,7 @@
           <Property Name="Department_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Department_Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Department_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblDepart__Manuf__31EC6D26" FromRole="tblDepartment" ToRole="tblManufacturer" />
+          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblDepart__Manuf__47DBAE45" FromRole="tblDepartment" ToRole="tblManufacturer" />
         </EntityType>
         <EntityType Name="tblDocument">
           <Key>
@@ -599,7 +599,7 @@
           </Key>
           <Property Name="Document_ID" Type="Int32" Nullable="false" />
           <Property Name="Document_Folder_Path" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Docum__35BCFE0A" FromRole="tblDocument" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Docum__4D94879B" FromRole="tblDocument" ToRole="tblProduct" />
         </EntityType>
         <EntityType Name="tblFeedBack">
           <Key>
@@ -611,8 +611,8 @@
           <Property Name="Feedback_Time" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Feedback_Score" Type="Int32" Nullable="false" />
           <Property Name="Feedback_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblFeedBa__Produ__32E0915F" FromRole="tblFeedBack" ToRole="tblProduct" />
-          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblFeedBa__User___33D4B598" FromRole="tblFeedBack" ToRole="tblUser" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblFeedBa__Produ__5165187F" FromRole="tblFeedBack" ToRole="tblProduct" />
+          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblFeedBa__User___5070F446" FromRole="tblFeedBack" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="tblManufacturer">
           <Key>
@@ -623,9 +623,9 @@
           <Property Name="Manufacturer_Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Manufacturer_Web" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="User_ID" Type="Int32" />
-          <NavigationProperty Name="tblDepartments" Relationship="Self.FK__tblDepart__Manuf__31EC6D26" FromRole="tblManufacturer" ToRole="tblDepartment" />
-          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblManufa__User___34C8D9D1" FromRole="tblManufacturer" ToRole="tblUser" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Manuf__36B12243" FromRole="tblManufacturer" ToRole="tblProduct" />
+          <NavigationProperty Name="tblDepartments" Relationship="Self.FK__tblDepart__Manuf__47DBAE45" FromRole="tblManufacturer" ToRole="tblDepartment" />
+          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblManufa__User___44FF419A" FromRole="tblManufacturer" ToRole="tblUser" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Manuf__4AB81AF0" FromRole="tblManufacturer" ToRole="tblProduct" />
         </EntityType>
         <EntityType Name="tblProduct">
           <Key>
@@ -636,20 +636,20 @@
           <Property Name="Sales_ID" Type="Int32" />
           <Property Name="SubCategory_ID" Type="Int32" />
           <Property Name="Product_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Product_Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Product_Image" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Series" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Model_Year" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Series_Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Document_ID" Type="Int32" />
           <Property Name="Featured" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblDocument" Relationship="Self.FK__tblProduc__Docum__35BCFE0A" FromRole="tblProduct" ToRole="tblDocument" />
-          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__Produ__32E0915F" FromRole="tblProduct" ToRole="tblFeedBack" />
-          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblProduc__Manuf__36B12243" FromRole="tblProduct" ToRole="tblManufacturer" />
-          <NavigationProperty Name="tblSale" Relationship="Self.FK__tblProduc__Sales__37A5467C" FromRole="tblProduct" ToRole="tblSales" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblProduc__SubCa__38996AB5" FromRole="tblProduct" ToRole="tblSubCategory" />
-          <NavigationProperty Name="tblProjToProds" Relationship="Self.FK__tblProjTo__Produ__3C69FB99" FromRole="tblProduct" ToRole="tblProjToProd" />
-          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Produ__3E52440B" FromRole="tblProduct" ToRole="tblPropertyValue" />
+          <NavigationProperty Name="tblDocument" Relationship="Self.FK__tblProduc__Docum__4D94879B" FromRole="tblProduct" ToRole="tblDocument" />
+          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__Produ__5165187F" FromRole="tblProduct" ToRole="tblFeedBack" />
+          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblProduc__Manuf__4AB81AF0" FromRole="tblProduct" ToRole="tblManufacturer" />
+          <NavigationProperty Name="tblSale" Relationship="Self.FK__tblProduc__Sales__4BAC3F29" FromRole="tblProduct" ToRole="tblSales" />
+          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblProduc__SubCa__4CA06362" FromRole="tblProduct" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblProjToProds" Relationship="Self.FK__tblProjTo__Produ__6C190EBB" FromRole="tblProduct" ToRole="tblProjToProd" />
+          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Produ__6477ECF3" FromRole="tblProduct" ToRole="tblPropertyValue" />
         </EntityType>
         <EntityType Name="tblProject">
           <Key>
@@ -664,10 +664,10 @@
           <Property Name="Project_State" Type="Int32" />
           <Property Name="Project_Size" Type="Int32" Nullable="false" />
           <Property Name="Client_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tblCity" Relationship="Self.FK__tblProjec__Proje__398D8EEE" FromRole="tblProject" ToRole="tblCity" />
-          <NavigationProperty Name="tblState" Relationship="Self.FK__tblProjec__Proje__3A81B327" FromRole="tblProject" ToRole="tblState" />
-          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblProjec__User___3B75D760" FromRole="tblProject" ToRole="tblUser" />
-          <NavigationProperty Name="tblProjToProds" Relationship="Self.FK__tblProjTo__Proje__3D5E1FD2" FromRole="tblProject" ToRole="tblProjToProd" />
+          <NavigationProperty Name="tblCity" Relationship="Self.FK__tblProjec__Proje__59FA5E80" FromRole="tblProject" ToRole="tblCity" />
+          <NavigationProperty Name="tblState" Relationship="Self.FK__tblProjec__Proje__5AEE82B9" FromRole="tblProject" ToRole="tblState" />
+          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblProjec__User___59063A47" FromRole="tblProject" ToRole="tblUser" />
+          <NavigationProperty Name="tblProjToProds" Relationship="Self.FK__tblProjTo__Proje__6B24EA82" FromRole="tblProject" ToRole="tblProjToProd" />
         </EntityType>
         <EntityType Name="tblProjToProd">
           <Key>
@@ -677,8 +677,8 @@
           <Property Name="Project_ID" Type="Int32" Nullable="false" />
           <Property Name="Product_ID" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProjTo__Produ__3C69FB99" FromRole="tblProjToProd" ToRole="tblProduct" />
-          <NavigationProperty Name="tblProject" Relationship="Self.FK__tblProjTo__Proje__3D5E1FD2" FromRole="tblProjToProd" ToRole="tblProject" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProjTo__Produ__6C190EBB" FromRole="tblProjToProd" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProject" Relationship="Self.FK__tblProjTo__Proje__6B24EA82" FromRole="tblProjToProd" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblProperty">
           <Key>
@@ -688,9 +688,9 @@
           <Property Name="Property_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IsType" Type="Boolean" />
           <Property Name="IsTechSpec" Type="Boolean" />
-          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Prope__3F466844" FromRole="tblProperty" ToRole="tblPropertyValue" />
-          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__Prope__412EB0B6" FromRole="tblProperty" ToRole="tblTechSpecFilter" />
-          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__Prope__4316F928" FromRole="tblProperty" ToRole="tblTypeFilter" />
+          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Prope__6383C8BA" FromRole="tblProperty" ToRole="tblPropertyValue" />
+          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__Prope__6754599E" FromRole="tblProperty" ToRole="tblTechSpecFilter" />
+          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__Prope__5FB337D6" FromRole="tblProperty" ToRole="tblTypeFilter" />
         </EntityType>
         <EntityType Name="tblPropertyValue">
           <Key>
@@ -700,8 +700,8 @@
           <Property Name="Property_ID" Type="Int32" Nullable="false" />
           <Property Name="Product_ID" Type="Int32" Nullable="false" />
           <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProper__Produ__3E52440B" FromRole="tblPropertyValue" ToRole="tblProduct" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblProper__Prope__3F466844" FromRole="tblPropertyValue" ToRole="tblProperty" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProper__Produ__6477ECF3" FromRole="tblPropertyValue" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblProper__Prope__6383C8BA" FromRole="tblPropertyValue" ToRole="tblProperty" />
         </EntityType>
         <EntityType Name="tblSale">
           <Key>
@@ -712,7 +712,7 @@
           <Property Name="Sales_Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Sales_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Sales_Web" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Sales__37A5467C" FromRole="tblSales" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Sales__4BAC3F29" FromRole="tblSales" ToRole="tblProduct" />
         </EntityType>
         <EntityType Name="tblState">
           <Key>
@@ -720,8 +720,8 @@
           </Key>
           <Property Name="State_ID" Type="Int32" Nullable="false" />
           <Property Name="State_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tblCities" Relationship="Self.FK__tblCity__State_I__30F848ED" FromRole="tblState" ToRole="tblCity" />
-          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__3A81B327" FromRole="tblState" ToRole="tblProject" />
+          <NavigationProperty Name="tblCities" Relationship="Self.FK__tblCity__State_I__5629CD9C" FromRole="tblState" ToRole="tblCity" />
+          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__5AEE82B9" FromRole="tblState" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblSubCategory">
           <Key>
@@ -730,10 +730,10 @@
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
           <Property Name="Category_ID" Type="Int32" />
           <Property Name="SubCategory_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tblCategory" Relationship="Self.FK__tblSubCat__Categ__403A8C7D" FromRole="tblSubCategory" ToRole="tblCategory" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__SubCa__38996AB5" FromRole="tblSubCategory" ToRole="tblProduct" />
-          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__SubCa__4222D4EF" FromRole="tblSubCategory" ToRole="tblTechSpecFilter" />
-          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__SubCa__440B1D61" FromRole="tblSubCategory" ToRole="tblTypeFilter" />
+          <NavigationProperty Name="tblCategory" Relationship="Self.FK__tblSubCat__Categ__398D8EEE" FromRole="tblSubCategory" ToRole="tblCategory" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__SubCa__4CA06362" FromRole="tblSubCategory" ToRole="tblProduct" />
+          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__SubCa__68487DD7" FromRole="tblSubCategory" ToRole="tblTechSpecFilter" />
+          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__SubCa__60A75C0F" FromRole="tblSubCategory" ToRole="tblTypeFilter" />
         </EntityType>
         <EntityType Name="tblTechSpecFilter">
           <Key>
@@ -744,8 +744,8 @@
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
           <Property Name="Min_Value" Type="Int32" />
           <Property Name="Max_Value" Type="Int32" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTechSp__Prope__412EB0B6" FromRole="tblTechSpecFilter" ToRole="tblProperty" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTechSp__SubCa__4222D4EF" FromRole="tblTechSpecFilter" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTechSp__Prope__6754599E" FromRole="tblTechSpecFilter" ToRole="tblProperty" />
+          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTechSp__SubCa__68487DD7" FromRole="tblTechSpecFilter" ToRole="tblSubCategory" />
         </EntityType>
         <EntityType Name="tblTypeFilter">
           <Key>
@@ -756,8 +756,8 @@
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
           <Property Name="Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Type_Options" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTypeFi__Prope__4316F928" FromRole="tblTypeFilter" ToRole="tblProperty" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTypeFi__SubCa__440B1D61" FromRole="tblTypeFilter" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTypeFi__Prope__5FB337D6" FromRole="tblTypeFilter" ToRole="tblProperty" />
+          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTypeFi__SubCa__60A75C0F" FromRole="tblTypeFilter" ToRole="tblSubCategory" />
         </EntityType>
         <EntityType Name="tblUser">
           <Key>
@@ -769,12 +769,12 @@
           <Property Name="User_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="User_Password" Type="Binary" MaxLength="64" FixedLength="true" Nullable="false" />
           <Property Name="Credential_ID" Type="Int32" />
-          <NavigationProperty Name="tblCredential" Relationship="Self.FK__tblUser__Credent__44FF419A" FromRole="tblUser" ToRole="tblCredential" />
-          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__User___33D4B598" FromRole="tblUser" ToRole="tblFeedBack" />
-          <NavigationProperty Name="tblManufacturers" Relationship="Self.FK__tblManufa__User___34C8D9D1" FromRole="tblUser" ToRole="tblManufacturer" />
-          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__User___3B75D760" FromRole="tblUser" ToRole="tblProject" />
+          <NavigationProperty Name="tblCredential" Relationship="Self.FK__tblUser__Credent__4222D4EF" FromRole="tblUser" ToRole="tblCredential" />
+          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__User___5070F446" FromRole="tblUser" ToRole="tblFeedBack" />
+          <NavigationProperty Name="tblManufacturers" Relationship="Self.FK__tblManufa__User___44FF419A" FromRole="tblUser" ToRole="tblManufacturer" />
+          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__User___59063A47" FromRole="tblUser" ToRole="tblProject" />
         </EntityType>
-        <Association Name="FK__tblSubCat__Categ__403A8C7D">
+        <Association Name="FK__tblSubCat__Categ__398D8EEE">
           <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="0..1" />
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -786,7 +786,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblCity__State_I__30F848ED">
+        <Association Name="FK__tblCity__State_I__5629CD9C">
           <End Role="tblState" Type="Self.tblState" Multiplicity="0..1" />
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="*" />
           <ReferentialConstraint>
@@ -798,7 +798,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__398D8EEE">
+        <Association Name="FK__tblProjec__Proje__59FA5E80">
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="0..1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -810,7 +810,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblUser__Credent__44FF419A">
+        <Association Name="FK__tblUser__Credent__4222D4EF">
           <End Role="tblCredential" Type="Self.tblCredential" Multiplicity="0..1" />
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -822,7 +822,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblDepart__Manuf__31EC6D26">
+        <Association Name="FK__tblDepart__Manuf__47DBAE45">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="0..1" />
           <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -834,7 +834,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Docum__35BCFE0A">
+        <Association Name="FK__tblProduc__Docum__4D94879B">
           <End Role="tblDocument" Type="Self.tblDocument" Multiplicity="0..1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -846,7 +846,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__Produ__32E0915F">
+        <Association Name="FK__tblFeedBa__Produ__5165187F">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -858,7 +858,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__User___33D4B598">
+        <Association Name="FK__tblFeedBa__User___5070F446">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -870,7 +870,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblManufa__User___34C8D9D1">
+        <Association Name="FK__tblManufa__User___44FF419A">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -882,7 +882,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Manuf__36B12243">
+        <Association Name="FK__tblProduc__Manuf__4AB81AF0">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="0..1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -894,7 +894,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Sales__37A5467C">
+        <Association Name="FK__tblProduc__Sales__4BAC3F29">
           <End Role="tblSales" Type="Self.tblSale" Multiplicity="0..1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -906,7 +906,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__SubCa__38996AB5">
+        <Association Name="FK__tblProduc__SubCa__4CA06362">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="0..1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -918,7 +918,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjTo__Produ__3C69FB99">
+        <Association Name="FK__tblProjTo__Produ__6C190EBB">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblProjToProd" Type="Self.tblProjToProd" Multiplicity="*" />
           <ReferentialConstraint>
@@ -930,7 +930,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Produ__3E52440B">
+        <Association Name="FK__tblProper__Produ__6477ECF3">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -942,7 +942,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__3A81B327">
+        <Association Name="FK__tblProjec__Proje__5AEE82B9">
           <End Role="tblState" Type="Self.tblState" Multiplicity="0..1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -954,7 +954,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__User___3B75D760">
+        <Association Name="FK__tblProjec__User___59063A47">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -966,7 +966,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjTo__Proje__3D5E1FD2">
+        <Association Name="FK__tblProjTo__Proje__6B24EA82">
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="1" />
           <End Role="tblProjToProd" Type="Self.tblProjToProd" Multiplicity="*" />
           <ReferentialConstraint>
@@ -978,7 +978,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Prope__3F466844">
+        <Association Name="FK__tblProper__Prope__6383C8BA">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -990,7 +990,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__Prope__412EB0B6">
+        <Association Name="FK__tblTechSp__Prope__6754599E">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1002,7 +1002,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__Prope__4316F928">
+        <Association Name="FK__tblTypeFi__Prope__5FB337D6">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1014,7 +1014,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__SubCa__4222D4EF">
+        <Association Name="FK__tblTechSp__SubCa__68487DD7">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1026,7 +1026,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__SubCa__440B1D61">
+        <Association Name="FK__tblTypeFi__SubCa__60A75C0F">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1057,91 +1057,91 @@
           <EntitySet Name="tblTechSpecFilters" EntityType="Self.tblTechSpecFilter" />
           <EntitySet Name="tblTypeFilters" EntityType="Self.tblTypeFilter" />
           <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
-          <AssociationSet Name="FK__tblSubCat__Categ__403A8C7D" Association="Self.FK__tblSubCat__Categ__403A8C7D">
+          <AssociationSet Name="FK__tblSubCat__Categ__398D8EEE" Association="Self.FK__tblSubCat__Categ__398D8EEE">
             <End Role="tblCategory" EntitySet="tblCategories" />
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblCity__State_I__30F848ED" Association="Self.FK__tblCity__State_I__30F848ED">
+          <AssociationSet Name="FK__tblCity__State_I__5629CD9C" Association="Self.FK__tblCity__State_I__5629CD9C">
             <End Role="tblState" EntitySet="tblStates" />
             <End Role="tblCity" EntitySet="tblCities" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__398D8EEE" Association="Self.FK__tblProjec__Proje__398D8EEE">
+          <AssociationSet Name="FK__tblProjec__Proje__59FA5E80" Association="Self.FK__tblProjec__Proje__59FA5E80">
             <End Role="tblCity" EntitySet="tblCities" />
             <End Role="tblProject" EntitySet="tblProjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblUser__Credent__44FF419A" Association="Self.FK__tblUser__Credent__44FF419A">
+          <AssociationSet Name="FK__tblUser__Credent__4222D4EF" Association="Self.FK__tblUser__Credent__4222D4EF">
             <End Role="tblCredential" EntitySet="tblCredentials" />
             <End Role="tblUser" EntitySet="tblUsers" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblDepart__Manuf__31EC6D26" Association="Self.FK__tblDepart__Manuf__31EC6D26">
+          <AssociationSet Name="FK__tblDepart__Manuf__47DBAE45" Association="Self.FK__tblDepart__Manuf__47DBAE45">
             <End Role="tblManufacturer" EntitySet="tblManufacturers" />
             <End Role="tblDepartment" EntitySet="tblDepartments" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Docum__35BCFE0A" Association="Self.FK__tblProduc__Docum__35BCFE0A">
+          <AssociationSet Name="FK__tblProduc__Docum__4D94879B" Association="Self.FK__tblProduc__Docum__4D94879B">
             <End Role="tblDocument" EntitySet="tblDocuments" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__Produ__32E0915F" Association="Self.FK__tblFeedBa__Produ__32E0915F">
+          <AssociationSet Name="FK__tblFeedBa__Produ__5165187F" Association="Self.FK__tblFeedBa__Produ__5165187F">
             <End Role="tblProduct" EntitySet="tblProducts" />
             <End Role="tblFeedBack" EntitySet="tblFeedBacks" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__User___33D4B598" Association="Self.FK__tblFeedBa__User___33D4B598">
+          <AssociationSet Name="FK__tblFeedBa__User___5070F446" Association="Self.FK__tblFeedBa__User___5070F446">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblFeedBack" EntitySet="tblFeedBacks" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblManufa__User___34C8D9D1" Association="Self.FK__tblManufa__User___34C8D9D1">
+          <AssociationSet Name="FK__tblManufa__User___44FF419A" Association="Self.FK__tblManufa__User___44FF419A">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblManufacturer" EntitySet="tblManufacturers" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Manuf__36B12243" Association="Self.FK__tblProduc__Manuf__36B12243">
+          <AssociationSet Name="FK__tblProduc__Manuf__4AB81AF0" Association="Self.FK__tblProduc__Manuf__4AB81AF0">
             <End Role="tblManufacturer" EntitySet="tblManufacturers" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Sales__37A5467C" Association="Self.FK__tblProduc__Sales__37A5467C">
+          <AssociationSet Name="FK__tblProduc__Sales__4BAC3F29" Association="Self.FK__tblProduc__Sales__4BAC3F29">
             <End Role="tblSales" EntitySet="tblSales" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__SubCa__38996AB5" Association="Self.FK__tblProduc__SubCa__38996AB5">
+          <AssociationSet Name="FK__tblProduc__SubCa__4CA06362" Association="Self.FK__tblProduc__SubCa__4CA06362">
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjTo__Produ__3C69FB99" Association="Self.FK__tblProjTo__Produ__3C69FB99">
+          <AssociationSet Name="FK__tblProjTo__Produ__6C190EBB" Association="Self.FK__tblProjTo__Produ__6C190EBB">
             <End Role="tblProduct" EntitySet="tblProducts" />
             <End Role="tblProjToProd" EntitySet="tblProjToProds" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Produ__3E52440B" Association="Self.FK__tblProper__Produ__3E52440B">
+          <AssociationSet Name="FK__tblProper__Produ__6477ECF3" Association="Self.FK__tblProper__Produ__6477ECF3">
             <End Role="tblProduct" EntitySet="tblProducts" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValues" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__3A81B327" Association="Self.FK__tblProjec__Proje__3A81B327">
+          <AssociationSet Name="FK__tblProjec__Proje__5AEE82B9" Association="Self.FK__tblProjec__Proje__5AEE82B9">
             <End Role="tblState" EntitySet="tblStates" />
             <End Role="tblProject" EntitySet="tblProjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__User___3B75D760" Association="Self.FK__tblProjec__User___3B75D760">
+          <AssociationSet Name="FK__tblProjec__User___59063A47" Association="Self.FK__tblProjec__User___59063A47">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblProject" EntitySet="tblProjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjTo__Proje__3D5E1FD2" Association="Self.FK__tblProjTo__Proje__3D5E1FD2">
+          <AssociationSet Name="FK__tblProjTo__Proje__6B24EA82" Association="Self.FK__tblProjTo__Proje__6B24EA82">
             <End Role="tblProject" EntitySet="tblProjects" />
             <End Role="tblProjToProd" EntitySet="tblProjToProds" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Prope__3F466844" Association="Self.FK__tblProper__Prope__3F466844">
+          <AssociationSet Name="FK__tblProper__Prope__6383C8BA" Association="Self.FK__tblProper__Prope__6383C8BA">
             <End Role="tblProperty" EntitySet="tblProperties" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValues" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__Prope__412EB0B6" Association="Self.FK__tblTechSp__Prope__412EB0B6">
+          <AssociationSet Name="FK__tblTechSp__Prope__6754599E" Association="Self.FK__tblTechSp__Prope__6754599E">
             <End Role="tblProperty" EntitySet="tblProperties" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilters" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__Prope__4316F928" Association="Self.FK__tblTypeFi__Prope__4316F928">
+          <AssociationSet Name="FK__tblTypeFi__Prope__5FB337D6" Association="Self.FK__tblTypeFi__Prope__5FB337D6">
             <End Role="tblProperty" EntitySet="tblProperties" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilters" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__SubCa__4222D4EF" Association="Self.FK__tblTechSp__SubCa__4222D4EF">
+          <AssociationSet Name="FK__tblTechSp__SubCa__68487DD7" Association="Self.FK__tblTechSp__SubCa__68487DD7">
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilters" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__SubCa__440B1D61" Association="Self.FK__tblTypeFi__SubCa__440B1D61">
+          <AssociationSet Name="FK__tblTypeFi__SubCa__60A75C0F" Association="Self.FK__tblTypeFi__SubCa__60A75C0F">
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilters" />
           </AssociationSet>
@@ -1151,9 +1151,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="joole_team1ModelStoreContainer" CdmEntityContainer="joole_team1Entities">
+        <EntityContainerMapping StorageEntityContainer="jooleModelStoreContainer" CdmEntityContainer="joole_team1Entities">
           <EntitySetMapping Name="tblCategories">
-            <EntityTypeMapping TypeName="joole_team1Model.tblCategory">
+            <EntityTypeMapping TypeName="jooleModel.tblCategory">
               <MappingFragment StoreEntitySet="tblCategory">
                 <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
                 <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
@@ -1161,7 +1161,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblCities">
-            <EntityTypeMapping TypeName="joole_team1Model.tblCity">
+            <EntityTypeMapping TypeName="jooleModel.tblCity">
               <MappingFragment StoreEntitySet="tblCity">
                 <ScalarProperty Name="City_ID" ColumnName="City_ID" />
                 <ScalarProperty Name="City_Name" ColumnName="City_Name" />
@@ -1170,7 +1170,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblCredentials">
-            <EntityTypeMapping TypeName="joole_team1Model.tblCredential">
+            <EntityTypeMapping TypeName="jooleModel.tblCredential">
               <MappingFragment StoreEntitySet="tblCredential">
                 <ScalarProperty Name="Credential_ID" ColumnName="Credential_ID" />
                 <ScalarProperty Name="User_Type" ColumnName="User_Type" />
@@ -1178,7 +1178,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblDepartments">
-            <EntityTypeMapping TypeName="joole_team1Model.tblDepartment">
+            <EntityTypeMapping TypeName="jooleModel.tblDepartment">
               <MappingFragment StoreEntitySet="tblDepartment">
                 <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
                 <ScalarProperty Name="Manufacturer_ID" ColumnName="Manufacturer_ID" />
@@ -1189,7 +1189,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblDocuments">
-            <EntityTypeMapping TypeName="joole_team1Model.tblDocument">
+            <EntityTypeMapping TypeName="jooleModel.tblDocument">
               <MappingFragment StoreEntitySet="tblDocument">
                 <ScalarProperty Name="Document_ID" ColumnName="Document_ID" />
                 <ScalarProperty Name="Document_Folder_Path" ColumnName="Document_Folder_Path" />
@@ -1197,7 +1197,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblFeedBacks">
-            <EntityTypeMapping TypeName="joole_team1Model.tblFeedBack">
+            <EntityTypeMapping TypeName="jooleModel.tblFeedBack">
               <MappingFragment StoreEntitySet="tblFeedBack">
                 <ScalarProperty Name="FeedBack_ID" ColumnName="FeedBack_ID" />
                 <ScalarProperty Name="User_ID" ColumnName="User_ID" />
@@ -1209,7 +1209,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblManufacturers">
-            <EntityTypeMapping TypeName="joole_team1Model.tblManufacturer">
+            <EntityTypeMapping TypeName="jooleModel.tblManufacturer">
               <MappingFragment StoreEntitySet="tblManufacturer">
                 <ScalarProperty Name="Manufacturer_ID" ColumnName="Manufacturer_ID" />
                 <ScalarProperty Name="Manufacturer_Name" ColumnName="Manufacturer_Name" />
@@ -1220,7 +1220,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblProducts">
-            <EntityTypeMapping TypeName="joole_team1Model.tblProduct">
+            <EntityTypeMapping TypeName="jooleModel.tblProduct">
               <MappingFragment StoreEntitySet="tblProduct">
                 <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
                 <ScalarProperty Name="Manufacturer_ID" ColumnName="Manufacturer_ID" />
@@ -1238,7 +1238,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblProjects">
-            <EntityTypeMapping TypeName="joole_team1Model.tblProject">
+            <EntityTypeMapping TypeName="jooleModel.tblProject">
               <MappingFragment StoreEntitySet="tblProject">
                 <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
                 <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
@@ -1253,7 +1253,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblProjToProds">
-            <EntityTypeMapping TypeName="joole_team1Model.tblProjToProd">
+            <EntityTypeMapping TypeName="jooleModel.tblProjToProd">
               <MappingFragment StoreEntitySet="tblProjToProd">
                 <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
                 <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
@@ -1262,7 +1262,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblProperties">
-            <EntityTypeMapping TypeName="joole_team1Model.tblProperty">
+            <EntityTypeMapping TypeName="jooleModel.tblProperty">
               <MappingFragment StoreEntitySet="tblProperty">
                 <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
                 <ScalarProperty Name="Property_Name" ColumnName="Property_Name" />
@@ -1272,7 +1272,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblPropertyValues">
-            <EntityTypeMapping TypeName="joole_team1Model.tblPropertyValue">
+            <EntityTypeMapping TypeName="jooleModel.tblPropertyValue">
               <MappingFragment StoreEntitySet="tblPropertyValue">
                 <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
                 <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
@@ -1281,7 +1281,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblSales">
-            <EntityTypeMapping TypeName="joole_team1Model.tblSale">
+            <EntityTypeMapping TypeName="jooleModel.tblSale">
               <MappingFragment StoreEntitySet="tblSales">
                 <ScalarProperty Name="Sales_ID" ColumnName="Sales_ID" />
                 <ScalarProperty Name="Sales_Name" ColumnName="Sales_Name" />
@@ -1292,7 +1292,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblStates">
-            <EntityTypeMapping TypeName="joole_team1Model.tblState">
+            <EntityTypeMapping TypeName="jooleModel.tblState">
               <MappingFragment StoreEntitySet="tblState">
                 <ScalarProperty Name="State_ID" ColumnName="State_ID" />
                 <ScalarProperty Name="State_Name" ColumnName="State_Name" />
@@ -1300,7 +1300,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblSubCategories">
-            <EntityTypeMapping TypeName="joole_team1Model.tblSubCategory">
+            <EntityTypeMapping TypeName="jooleModel.tblSubCategory">
               <MappingFragment StoreEntitySet="tblSubCategory">
                 <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
                 <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
@@ -1309,7 +1309,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblTechSpecFilters">
-            <EntityTypeMapping TypeName="joole_team1Model.tblTechSpecFilter">
+            <EntityTypeMapping TypeName="jooleModel.tblTechSpecFilter">
               <MappingFragment StoreEntitySet="tblTechSpecFilter">
                 <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
                 <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
@@ -1319,7 +1319,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblTypeFilters">
-            <EntityTypeMapping TypeName="joole_team1Model.tblTypeFilter">
+            <EntityTypeMapping TypeName="jooleModel.tblTypeFilter">
               <MappingFragment StoreEntitySet="tblTypeFilter">
                 <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
                 <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
@@ -1329,7 +1329,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblUsers">
-            <EntityTypeMapping TypeName="joole_team1Model.tblUser">
+            <EntityTypeMapping TypeName="jooleModel.tblUser">
               <MappingFragment StoreEntitySet="tblUser">
                 <ScalarProperty Name="User_ID" ColumnName="User_ID" />
                 <ScalarProperty Name="User_Name" ColumnName="User_Name" />

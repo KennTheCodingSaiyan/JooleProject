@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="joole_team1ModelStoreContainer" CdmEntityContainer="joole_team1Entities">
+  <EntityContainerMapping StorageEntityContainer="jooleModelStoreContainer" CdmEntityContainer="joole_team1Entities">
     <EntitySetMapping Name="tblCategories">
-      <EntityTypeMapping TypeName="joole_team1Model.tblCategory">
+      <EntityTypeMapping TypeName="jooleModel.tblCategory">
         <MappingFragment StoreEntitySet="tblCategory">
           <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
           <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblCities">
-      <EntityTypeMapping TypeName="joole_team1Model.tblCity">
+      <EntityTypeMapping TypeName="jooleModel.tblCity">
         <MappingFragment StoreEntitySet="tblCity">
           <ScalarProperty Name="City_ID" ColumnName="City_ID" />
           <ScalarProperty Name="City_Name" ColumnName="City_Name" />
@@ -19,7 +19,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblCredentials">
-      <EntityTypeMapping TypeName="joole_team1Model.tblCredential">
+      <EntityTypeMapping TypeName="jooleModel.tblCredential">
         <MappingFragment StoreEntitySet="tblCredential">
           <ScalarProperty Name="Credential_ID" ColumnName="Credential_ID" />
           <ScalarProperty Name="User_Type" ColumnName="User_Type" />
@@ -27,7 +27,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblDepartments">
-      <EntityTypeMapping TypeName="joole_team1Model.tblDepartment">
+      <EntityTypeMapping TypeName="jooleModel.tblDepartment">
         <MappingFragment StoreEntitySet="tblDepartment">
           <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
           <ScalarProperty Name="Manufacturer_ID" ColumnName="Manufacturer_ID" />
@@ -38,7 +38,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblDocuments">
-      <EntityTypeMapping TypeName="joole_team1Model.tblDocument">
+      <EntityTypeMapping TypeName="jooleModel.tblDocument">
         <MappingFragment StoreEntitySet="tblDocument">
           <ScalarProperty Name="Document_ID" ColumnName="Document_ID" />
           <ScalarProperty Name="Document_Folder_Path" ColumnName="Document_Folder_Path" />
@@ -46,7 +46,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblFeedBacks">
-      <EntityTypeMapping TypeName="joole_team1Model.tblFeedBack">
+      <EntityTypeMapping TypeName="jooleModel.tblFeedBack">
         <MappingFragment StoreEntitySet="tblFeedBack">
           <ScalarProperty Name="FeedBack_ID" ColumnName="FeedBack_ID" />
           <ScalarProperty Name="User_ID" ColumnName="User_ID" />
@@ -58,7 +58,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblManufacturers">
-      <EntityTypeMapping TypeName="joole_team1Model.tblManufacturer">
+      <EntityTypeMapping TypeName="jooleModel.tblManufacturer">
         <MappingFragment StoreEntitySet="tblManufacturer">
           <ScalarProperty Name="Manufacturer_ID" ColumnName="Manufacturer_ID" />
           <ScalarProperty Name="Manufacturer_Name" ColumnName="Manufacturer_Name" />
@@ -69,7 +69,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblProducts">
-      <EntityTypeMapping TypeName="joole_team1Model.tblProduct">
+      <EntityTypeMapping TypeName="jooleModel.tblProduct">
         <MappingFragment StoreEntitySet="tblProduct">
           <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
           <ScalarProperty Name="Manufacturer_ID" ColumnName="Manufacturer_ID" />
@@ -87,7 +87,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblProjects">
-      <EntityTypeMapping TypeName="joole_team1Model.tblProject">
+      <EntityTypeMapping TypeName="jooleModel.tblProject">
         <MappingFragment StoreEntitySet="tblProject">
           <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
           <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
@@ -102,7 +102,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblProjToProds">
-      <EntityTypeMapping TypeName="joole_team1Model.tblProjToProd">
+      <EntityTypeMapping TypeName="jooleModel.tblProjToProd">
         <MappingFragment StoreEntitySet="tblProjToProd">
           <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
           <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
@@ -111,7 +111,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblProperties">
-      <EntityTypeMapping TypeName="joole_team1Model.tblProperty">
+      <EntityTypeMapping TypeName="jooleModel.tblProperty">
         <MappingFragment StoreEntitySet="tblProperty">
           <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
           <ScalarProperty Name="Property_Name" ColumnName="Property_Name" />
@@ -121,7 +121,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblPropertyValues">
-      <EntityTypeMapping TypeName="joole_team1Model.tblPropertyValue">
+      <EntityTypeMapping TypeName="jooleModel.tblPropertyValue">
         <MappingFragment StoreEntitySet="tblPropertyValue">
           <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
           <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
@@ -130,7 +130,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblSales">
-      <EntityTypeMapping TypeName="joole_team1Model.tblSale">
+      <EntityTypeMapping TypeName="jooleModel.tblSale">
         <MappingFragment StoreEntitySet="tblSales">
           <ScalarProperty Name="Sales_ID" ColumnName="Sales_ID" />
           <ScalarProperty Name="Sales_Name" ColumnName="Sales_Name" />
@@ -141,7 +141,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblStates">
-      <EntityTypeMapping TypeName="joole_team1Model.tblState">
+      <EntityTypeMapping TypeName="jooleModel.tblState">
         <MappingFragment StoreEntitySet="tblState">
           <ScalarProperty Name="State_ID" ColumnName="State_ID" />
           <ScalarProperty Name="State_Name" ColumnName="State_Name" />
@@ -149,7 +149,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblSubCategories">
-      <EntityTypeMapping TypeName="joole_team1Model.tblSubCategory">
+      <EntityTypeMapping TypeName="jooleModel.tblSubCategory">
         <MappingFragment StoreEntitySet="tblSubCategory">
           <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
           <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
@@ -158,7 +158,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblTechSpecFilters">
-      <EntityTypeMapping TypeName="joole_team1Model.tblTechSpecFilter">
+      <EntityTypeMapping TypeName="jooleModel.tblTechSpecFilter">
         <MappingFragment StoreEntitySet="tblTechSpecFilter">
           <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
           <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
@@ -168,7 +168,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblTypeFilters">
-      <EntityTypeMapping TypeName="joole_team1Model.tblTypeFilter">
+      <EntityTypeMapping TypeName="jooleModel.tblTypeFilter">
         <MappingFragment StoreEntitySet="tblTypeFilter">
           <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
           <ScalarProperty Name="SubCategory_ID" ColumnName="SubCategory_ID" />
@@ -178,7 +178,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblUsers">
-      <EntityTypeMapping TypeName="joole_team1Model.tblUser">
+      <EntityTypeMapping TypeName="jooleModel.tblUser">
         <MappingFragment StoreEntitySet="tblUser">
           <ScalarProperty Name="User_ID" ColumnName="User_ID" />
           <ScalarProperty Name="User_Name" ColumnName="User_Name" />
