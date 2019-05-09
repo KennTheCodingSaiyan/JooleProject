@@ -13,18 +13,20 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="container body-content">
-        <div class="row search-page">
-            <img src="~/Images/joole_logo.png" />
-            <div class="marketing">Building Product Selection Platform</div>
-            <div class="dropdown">
-                <input id="categoryId" type="hidden" />
-                <button class="btn btn-primary dropdown-toggle" id="categoryMenu" type="button" data-toggle="dropdown">
-                    Category
-                    <span class="caret"></span>
-                </button>
-                <input type="text" id="subCategory" />
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1"></ul>
+    <div class="body-background">
+        <div class="container body-content">
+            <div class="row search-page">
+                <img src="~/Images/joole_logo.png" />
+                <div class="marketing">Building Product Selection Platform</div>
+                <div class="dropdown">
+                    <input id="categoryId" type="hidden" />
+                    <button class="btn btn-primary dropdown-toggle" id="categoryMenu" type="button" data-toggle="dropdown">
+                        Category
+                        <span class="caret"></span>
+                    </button>
+                    <input type="text" id="subCategory" />
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1"></ul>
+                </div>
             </div>
         </div>
     </div>
@@ -32,63 +34,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script>
-        $(function () {
-            $(".dropdown").on('show.bs.dropdown', function () {
-                $.ajax({
-                    type: "GET",
-                    url: '/Search/ShowCategories',
-                    success: function (data) {
-                        for (cat of data) {
-                            $(".dropdown-menu").append(`<li role="presentation"><a role="menuitem" value="${cat.id}" tabindex="-1" href="#">${cat.name}</a></li>`);
-                        }
-                    }
-                });
-            });
-            $(".dropdown").on('hidden.bs.dropdown', function () {
-                $(".dropdown-menu")[0].innerHTML = '';
-            });
-            $(".dropdown").click(function (e) {
-                if (e.target.tagName == 'A') {
-                    $('#categoryMenu')[0].innerHTML = e.target.innerHTML + `   <span class="caret"></span>`;
-                    $('#categoryId').val(e.target.getAttribute('value'));
-                }
-            });
-
-            $("#subCategory").autocomplete({
-                source: function (request, response) {
-                    let param = { name: $('#subCategory').val(), category_Id: $('#categoryId').val() };
-                    $.ajax({
-                        url: '/Search/AutoCompleteSubCategory',
-                        data: JSON.stringify(param),
-                        dataType: "json",
-                        type: "POST",
-                        contentType: "application/json; charset=utf-8",
-                        dataFilter: function (data) { return data; },
-                        success: function (data) {
-                            response($.map(data, function (item) {
-                                return {
-                                    value: item.name,
-                                    subCategory: item.id,
-                                    category: item.categoryId
-
-                                }
-                            }))
-                        },
-                        error: function (XMLHttpRequest, textStatus, errorThrown) {
-                            var err = eval("(" + XMLHttpRequest.responseText + ")");
-                            alert(err.Message)
-                            // console.log("Ajax Error!");
-                        }
-                    });
-                },
-                minLength: 2, //This is the Char length of inputTextBox
-                select: function (event, ui) {
-                    window.location.href = "/Search/Search?cat=" + ui.item.category + "&sub=" + ui.item.subCategory;
-                }
-            });
-        });
-    </script>
+    <script type="text/javascript" src="~/Scripts/custom.js"></script>
 </body>
 </html>
 
