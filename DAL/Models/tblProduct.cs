@@ -27,7 +27,7 @@ namespace DAL.Models
         public Nullable<int> Sales_ID { get; set; }
         public Nullable<int> SubCategory_ID { get; set; }
         public string Product_Name { get; set; }
-        public byte[] Product_Image { get; set; }
+        public string Product_Image { get; set; }
         public string Series { get; set; }
         public string Model { get; set; }
         public System.DateTime Model_Year { get; set; }

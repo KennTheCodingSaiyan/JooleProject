@@ -23,10 +23,11 @@ namespace Repositories.Repositories
         void Update(TEntity entity);
 
     }
+
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext context;
-        public Repository (DbContext context)
+        public Repository(DbContext context)
         {
             this.context = context;
         }

@@ -10,7 +10,6 @@ namespace Repositories.Repositories
     public interface IManufactureRepo : IRepository<tblManufacturer>
     {
 
-      
     }
     public class ManufactureRepo : Repository<tblManufacturer>, IManufactureRepo
     {

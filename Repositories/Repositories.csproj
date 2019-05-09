@@ -143,7 +143,7 @@
     <Compile Include="Repositories\PropertyRepo.cs" />
     <Compile Include="Repositories\PropertyValueRepo.cs" />
     <Compile Include="Repositories\Repository.cs" />
-    <Compile Include="Repositories\SubcategoryRepo.cs" />
+    <Compile Include="Repositories\SubCategoryRepo.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
