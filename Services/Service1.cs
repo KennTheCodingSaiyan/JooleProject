@@ -11,7 +11,7 @@ namespace Services
 
         public List<SubCategory> AutoCompleteSubCategories(String input, int categoryId)
         {
-            List<SubCategory> list = uow.subcategory.GetAll().Where(s => s.Category_ID.Equals(categoryId) && s.SubCategory_Name.ToLower().Contains(input.ToLower())).
+            List<SubCategory> list = uow.subCategory.GetAll().Where(s => s.Category_ID.Equals(categoryId) && s.SubCategory_Name.ToLower().Contains(input.ToLower())).
                 Select(s => new SubCategory(s.SubCategory_ID, s.Category_ID, s.SubCategory_Name)).ToList();
             return list;
         }

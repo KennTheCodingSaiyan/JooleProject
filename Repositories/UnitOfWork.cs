@@ -13,7 +13,7 @@ namespace Repositories
         public IConsumerRepo consumer;
         public IProductRepo product;
         public ICategoryRepo category;
-        public ISubcategoryRepo subcategory;
+        public ISubCategoryRepo subCategory;
         public IManufactureRepo manufacture;
         public IPropertyValueRepo propertyvalue;
         public IPropertyRepo property;
@@ -24,7 +24,7 @@ namespace Repositories
             consumer = new ConsumerRepo(context);
             product = new ProductRepo(context);
             category = new CategoryRepo(context);
-            subcategory = new SubcategoryRepo(context);
+            subCategory = new SubCategoryRepo(context);
             manufacture = new ManufactureRepo(context);
             propertyvalue = new PropertyValueRepo(context);
             property = new PropertyRepo(context);
