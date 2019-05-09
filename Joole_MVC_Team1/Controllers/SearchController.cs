@@ -1,6 +1,5 @@
 ﻿using Joole_MVC_Team1.Models;
 using Services;
-using Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,21 +17,10 @@ namespace Joole_MVC_Team1.Controllers
             return View();
         }
 
-        [HttpPost]
-        public virtual ActionResult Products(SearchViewModel model)
-        {
-            var products = service.getAllProductsByCriteria(model);
-            return PartialView(products);
-        }
-
         public ActionResult Search(int categoryId, int subCategoryId)
         {
-            var specFilters = service.ShowSpecFiltersForSubCategory(subCategoryId);
-            var typeFilters = service.ShowTypeFiltersForSubCategory(subCategoryId);
-            var categoryName = service.getCategoryName(categoryId);
-            var subCategoryName = service.getSubCategoryName(subCategoryId);
-            var model = new SearchViewModel(subCategoryId, 0, 0, categoryName, subCategoryName, specFilters, typeFilters);
-            return View(model);
+            var filters = service.ShowSpecFiltersForSubCategory(subCategoryId);
+            return View();
         }
 
         public ActionResult ShowCategories()

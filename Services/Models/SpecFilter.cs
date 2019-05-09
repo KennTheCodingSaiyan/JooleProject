@@ -13,10 +13,7 @@ namespace Services.Models
         public int min { get; set; }
         public int max { get; set; }
 
-        public SpecFilter()
-        {
 
-        }
         public SpecFilter(int propertyId, int subCategoryId, String propertyName, int? min, int? max)
         {
             this.propertyId = propertyId;
