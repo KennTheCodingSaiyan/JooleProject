@@ -22,7 +22,7 @@ namespace Joole_MVC_Team1.Models
             techSpecList = init_TechSpecList();
 
     */
-
+            techSpecList = init_TechSpecList();
             productID = Int32.Parse(product.Product_ID.ToString());
             Manufacture = s.GetManufNameByID(Int32.Parse( product.Manufacturer_ID.ToString()));
             Series = product.Series.ToString();
@@ -57,11 +57,6 @@ namespace Joole_MVC_Team1.Models
         {
             List < TechSpecViewModel > res = new List<TechSpecViewModel>();
             
-            foreach(tblPropertyValue item in pvList)
-            {
-                //TechSpecViewModel temp = new TechSpecViewModel(item.Property_ID);
-                //res.Add(temp);
-            }
             return res;
         }
 
