@@ -33,7 +33,7 @@ namespace Joole_MVC_Team1.Controllers
             //return View(customer);
             id = 1;
             tblProduct product = new Service().getProductService((int)id);
-            return View();
+            return View(product);
         }
 
 

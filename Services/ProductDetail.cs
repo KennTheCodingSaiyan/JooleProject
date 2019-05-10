@@ -12,7 +12,9 @@ namespace Services
 
         public tblProduct getProductService(int id)
         {
-            return uow.product.GetByID(id);
+            tblProduct product =  uow.product.GetByID(id);
+
+            return product;
 
         }
     }
