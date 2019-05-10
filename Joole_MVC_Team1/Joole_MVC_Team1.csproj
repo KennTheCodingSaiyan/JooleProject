@@ -135,13 +135,18 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\tempProductDetailsController.cs" />
+    <Compile Include="Controllers\UserLoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\SubCategoryViewModel.cs" />
+    <Compile Include="Models\TechSpecViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Joole_MVC_Team1.dll" />
+    <Content Include="bin\Joole_MVC_Team1.pdb" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -150,8 +155,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\joole_logo.png" />
+    <Content Include="Images\laptop_1.png" />
+    <Content Include="Images\laptop_2.png" />
+    <Content Include="Images\laptop_3.png" />
+    <Content Include="Images\tablet_1.png" />
+    <Content Include="Images\vacuum_cleaner_1.png" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.dll" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.csproj.CopyComplete" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.csprojAssemblyReference.cache" />
     <Content Include="Views\tempProductDetails\Details.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
@@ -199,6 +217,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
