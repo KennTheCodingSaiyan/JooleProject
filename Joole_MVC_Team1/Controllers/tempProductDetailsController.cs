@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Repositories.Repositories;
 using DAL.Models;
 using Services;
+using Joole_MVC_Team1.Models;
 
 namespace Joole_MVC_Team1.Controllers
 {
@@ -32,8 +33,9 @@ namespace Joole_MVC_Team1.Controllers
             //}
             //return View(customer);
             id = 1;
-            tblProduct product = new Service().getProductService((int)id);
-            return View(product);
+            //tblProduct product = new Service().getProductService((int)id);
+            ProductViewModel pvm = new ProductViewModel((int)id);
+            return View(pvm);
         }
 
 

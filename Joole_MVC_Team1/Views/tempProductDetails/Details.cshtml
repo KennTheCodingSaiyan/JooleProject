@@ -1,54 +1,21 @@
-﻿@model DAL.Models.tblProduct
+﻿@model Joole_MVC_Team1.Models.ProductViewModel
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>tblProduct</h4>
+    <h4>ProductViewModel</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Product_ID)
+            @Html.DisplayNameFor(model => model.Manufacture)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Product_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Manufacturer_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Manufacturer_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sales_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sales_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SubCategory_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SubCategory_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product_Name)
+            @Html.DisplayFor(model => model.Manufacture)
         </dd>
 
         <dt>
@@ -68,40 +35,49 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Model_Year)
+            @Html.DisplayNameFor(model => model.UseType)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Model_Year)
+            @Html.DisplayFor(model => model.UseType)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Series_Info)
+            @Html.DisplayNameFor(model => model.Application)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Series_Info)
+            @Html.DisplayFor(model => model.Application)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Document_ID)
+            @Html.DisplayNameFor(model => model.MountingLoaction)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Document_ID)
+            @Html.DisplayFor(model => model.MountingLoaction)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Featured)
+            @Html.DisplayNameFor(model => model.Accessories)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Featured)
+            @Html.DisplayFor(model => model.Accessories)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelYear)
         </dd>
 
     </dl>
+  
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.productID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
