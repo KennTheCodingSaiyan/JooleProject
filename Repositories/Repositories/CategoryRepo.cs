@@ -7,14 +7,12 @@ using System.Data.Entity;
 
 namespace Repositories.Repositories
 {
-
     public interface ICategoryRepo : IRepository<tblCategory>
     {
 
     }
 
     public class CategoryRepo : Repository<tblCategory>, ICategoryRepo
-
     {
         public CategoryRepo(DbContext context) : base(context)
         {

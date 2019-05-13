@@ -134,13 +134,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\tempProductDetailsController.cs" />
+    <Compile Include="Controllers\UserLoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductCmpViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\SubCategoryViewModel.cs" />
+    <Compile Include="Models\TechSpecViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Joole_MVC_Team1.dll" />
+    <Content Include="bin\Joole_MVC_Team1.pdb" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -155,12 +162,18 @@
     <Content Include="Images\laptop_3.png" />
     <Content Include="Images\tablet_1.png" />
     <Content Include="Images\vacuum_cleaner_1.png" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.dll" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\custom.js" />
-    <Content Include="Views\Search\SearchPage.cshtml" />
-    <Content Include="Views\Search\Search.cshtml" />
-    <Content Include="Views\Search\Products.cshtml" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.csproj.CopyComplete" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\Joole_MVC_Team1.csprojAssemblyReference.cache" />
+    <Content Include="Views\tempProductDetails\Details.cshtml" />
+    <Content Include="Views\tempProductDetails\ProductCompare2.cshtml" />
+    <Content Include="Views\tempProductDetails\ProductCompare3.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -207,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -222,6 +236,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{39907d82-f0e1-40fb-8344-56044c006477}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositories\Repositories.csproj">
+      <Project>{b83a8fe9-bdb0-49cf-84dd-09d03840fd23}</Project>
+      <Name>Repositories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{6089574e-5483-4a16-8508-3c22fea23584}</Project>
       <Name>Services</Name>
