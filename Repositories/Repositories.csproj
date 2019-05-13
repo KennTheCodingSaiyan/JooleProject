@@ -145,6 +145,7 @@
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\SpecFilterRepo.cs" />
     <Compile Include="Repositories\SubCategoryRepo.cs" />
+    <Compile Include="Repositories\TypeFilterRepo.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
