@@ -139,6 +139,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductCmpViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\SubCategoryViewModel.cs" />
     <Compile Include="Models\TechSpecViewModel.cs" />
@@ -171,6 +172,8 @@
     <Content Include="obj\Debug\Joole_MVC_Team1.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\Joole_MVC_Team1.csprojAssemblyReference.cache" />
     <Content Include="Views\tempProductDetails\Details.cshtml" />
+    <Content Include="Views\tempProductDetails\ProductCompare2.cshtml" />
+    <Content Include="Views\tempProductDetails\ProductCompare3.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
