@@ -38,6 +38,45 @@ namespace Joole_MVC_Team1.Controllers
             return View(pvm);
         }
 
+        public ActionResult ProductCompare2(int? id1, int? id2)
+        {
+            if (id1 == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (id2 == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            id1 = 1;
+            id2 = 2;
+         
 
+            return View(new ProductCmpViewModel((int)id1, (int)id2));
+
+        }
+        public ActionResult ProductCompare3(int? id1, int? id2, int? id3)
+        {
+            if (id1 == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (id2 == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            }
+            if (id3 == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            id1 = 1;
+            id2 = 2;
+            id3 = 3;
+
+            return View(new ProductCmpViewModel((int)id1, (int)id2, (int)id3));
+
+        }
     }
 }
