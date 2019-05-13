@@ -17,6 +17,7 @@ namespace Repositories
         public IManufactureRepo manufacture;
         public IPropertyValueRepo propertyvalue;
         public IPropertyRepo property;
+        public ITechPscFilterRepo techspecfilter;
 
         public UnitOfWork(DbContext context)
         {
@@ -28,6 +29,7 @@ namespace Repositories
             manufacture = new ManufactureRepo(context);
             propertyvalue = new PropertyValueRepo(context);
             property = new PropertyRepo(context);
+            techspecfilter = new TechPscFilterRepo(context);
 
 
             //add attrs
