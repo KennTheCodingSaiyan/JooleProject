@@ -23,15 +23,15 @@ namespace Repositories
         public UnitOfWork(DbContext context)
         {
             this.Context = context;
-            consumer = new ConsumerRepo(context);
-            product = new ProductRepo(context);
-            category = new CategoryRepo(context);
-            subCategory = new SubCategoryRepo(context);
-            manufacture = new ManufactureRepo(context);
-            propertyvalue = new PropertyValueRepo(context);
-            property = new PropertyRepo(context);
-            specFilter = new SpecFilterRepo(context);
-            typeFilter = new TypeFilterRepo(context);
+            consumer = new ConsumerRepo(this.Context);
+            product = new ProductRepo(this.Context);
+            category = new CategoryRepo(this.Context);
+            subCategory = new SubCategoryRepo(this.Context);
+            manufacture = new ManufactureRepo(this.Context);
+            propertyvalue = new PropertyValueRepo(this.Context);
+            property = new PropertyRepo(this.Context);
+            specFilter = new SpecFilterRepo(this.Context);
+            typeFilter = new TypeFilterRepo(this.Context);
 
             //add attrs
         }
@@ -71,7 +71,7 @@ namespace Repositories
         public void Dispose()
         {
             // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-            Dispose(true);
+            Context.Dispose();
             // TODO: uncomment the following line if the finalizer is overridden above.
             // GC.SuppressFinalize(this);
         }
