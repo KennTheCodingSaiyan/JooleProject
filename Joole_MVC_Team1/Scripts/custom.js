@@ -13,8 +13,11 @@
             slide: function (event, ui) {
                 $(this).prev()[0].textContent = ui.values[0];
                 $(this).next()[0].textContent = ui.values[1];
+            },
+            change: function (event, ui) {
                 updateProducts();
             }
+
         });
     });
 
