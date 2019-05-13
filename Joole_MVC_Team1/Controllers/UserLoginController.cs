@@ -12,6 +12,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
 using Services;
+using System.Collections;
+using Repositories.Repositories;
 
 namespace Joole_MVC_Team1.Controllers
 {
@@ -20,8 +22,21 @@ namespace Joole_MVC_Team1.Controllers
         // UserLogin
         public ActionResult LoginPage(string userIDInfo, string passwordInfo)
         {
+            // test service layer
+            GetProductsService test = new GetProductsService();
+            ArrayList singledata;
+            ArrayList doubledata;
+            /*****pass SPropertyID and ProductID*****/
+            singledata = test.ReturnSingleData(4, 4);
+            /*pass DPropertyID and SubCategoryID*/
+            doubledata = test.ReturnDoubleData(6, 1);
+            test.ProductIDToAllPropertyID(2);
+            test.SubCategoryIDToAllPropertyID(1);
+            int testpoint = 0;
+            /*******************************************/
             // if all the inputs are null keep the login page
-            if((userIDInfo == null) && (passwordInfo == null))
+
+            if ((userIDInfo == null) && (passwordInfo == null))
             {
                 return View();
             }
