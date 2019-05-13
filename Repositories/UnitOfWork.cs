@@ -17,7 +17,8 @@ namespace Repositories
         public IManufactureRepo manufacture;
         public IPropertyValueRepo propertyvalue;
         public IPropertyRepo property;
-        public ISpecFilterRepo filter;
+        public ISpecFilterRepo specFilter;
+        public ITypeFilterRepo typeFilter;
 
         public UnitOfWork(DbContext context)
         {
@@ -29,7 +30,8 @@ namespace Repositories
             manufacture = new ManufactureRepo(context);
             propertyvalue = new PropertyValueRepo(context);
             property = new PropertyRepo(context);
-            filter = new SpecFilterRepo(context);
+            specFilter = new SpecFilterRepo(context);
+            typeFilter = new TypeFilterRepo(context);
 
             //add attrs
         }
