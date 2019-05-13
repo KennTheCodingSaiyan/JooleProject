@@ -15,5 +15,15 @@ namespace Services
             return uow.product.GetByID(id);
 
         }
+
+
+        /// test service 
+        ///
+     
+      // public tblProduct getModelYearService(int id)
+      //{
+       //  return uow.product.();
+      //}
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Services.Models;
+﻿using DAL.Models;
+using Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,14 @@ namespace Services
             List<Category> list = uow.category.GetAll().Select(cat => new Category(cat.Category_ID, cat.Category_Name)).ToList();
             return list;
         }
+
+   
+
+        public tblProduct GetProductCompare(int id)
+        {
+          
+            return uow.product.GetByID(id);
+        }
+
     }
 }

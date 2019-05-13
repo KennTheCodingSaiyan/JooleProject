@@ -14,9 +14,15 @@ namespace Joole_MVC_Team1
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               name: "testCMP",
+               url: "Compare/Compare/{id1}/{id2}",
+               defaults: new { controller = "Compare", action = "Compare" }
+           );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Search", action = "SearchPage", id = UrlParameter.Optional }
             );
         }
     }
