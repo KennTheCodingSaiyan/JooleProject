@@ -1,49 +1,36 @@
 ﻿@model IEnumerable<Services.Models.Product>
+@using Joole_MVC_Team1.Extensions
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.manufacturerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.productName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.productImage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Series)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Model)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.modelYear)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var row in Model.ToArray().Split(3))
+        {
+            <div class="row">
+                @foreach (var item in row)
+                {
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.manufacturerName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.productName)
-        </td>
-        <td>
-           <img height="200" src="@Html.DisplayFor(modelItem => item.productImage)" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Series)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Model)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.modelYear)
-        </td>
-    </tr>
-}
-
-</table>
+                    <div class="product-col col-sm-3 col-md-3">
+                        <div>
+                            <img class="product-image" id="@Html.DisplayFor(modelItem => item.productId)-productImage" src="@Html.DisplayFor(modelItem => item.productImage)" />
+                        </div>
+                        <div class="product-title">
+                            <div>@Html.DisplayFor(modelItem => item.manufacturerName) @Html.DisplayFor(modelItem => item.productName)</div>
+                            <div>@Html.DisplayFor(modelItem => item.Series)</div>
+                            <div>@Html.DisplayFor(modelItem => item.modelYear) @Html.DisplayFor(modelItem => item.Model)</div>
+                        </div>
+                        <div>
+                            @foreach (var prop in item.propertyValues)
+                            {
+                                <div>@prop</div>
+                            }
+                        </div>
+                        <div>
+                            <label for="compare-@Html.DisplayFor(modelItem => item.productId)">Compare</label>
+                            <input type="checkbox" class="compare" name="compare-@Html.DisplayFor(modelItem => item.productId)" value="@Html.DisplayFor(modelItem => item.productId)" />
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        @if(!Model.Any())
+        {
+            <div class="product-title">No results found</div>
+        }

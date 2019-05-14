@@ -11,9 +11,16 @@ namespace Services
 
         public List<SubCategory> AutoCompleteSubCategories(String input, int categoryId)
         {
-            var list = uow.subCategory.GetAll().Where(s => s.Category_ID.Equals(categoryId) && s.SubCategory_Name.ToLower().Contains(input.ToLower())).
-                Select(s => new SubCategory(s.SubCategory_ID, s.Category_ID, s.SubCategory_Name)).ToList();
-            return list;
+            var tblSubCategories = uow.subCategory.GetAll();
+            if(categoryId != 0)
+            {
+                return tblSubCategories.Where(s => s.Category_ID.Equals(categoryId) && s.SubCategory_Name.ToLower().Contains(input.ToLower())).
+                    Select(s => new SubCategory(s.SubCategory_ID, s.Category_ID, s.SubCategory_Name)).ToList();
+            } else
+            {
+                return tblSubCategories.Where(s => s.SubCategory_Name.ToLower().Contains(input.ToLower())).
+                    Select(s => new SubCategory(s.SubCategory_ID, s.Category_ID, s.SubCategory_Name)).ToList();
+            }
         }
 
         public List<Category> ShowAllCategories()
@@ -40,10 +47,26 @@ namespace Services
             return list;
         }
 
+        public String getCategoryName(int categoryId)
+        {
+            return uow.category.GetByID(categoryId).Category_Name;
+        }
+
+        public String getSubCategoryName(int subCategoryId)
+        {
+            return uow.subCategory.GetByID(subCategoryId).SubCategory_Name;
+        }
+
         public List<Product> getAllProductsByCriteria(SearchViewModel model)
         {
             var products = uow.product.GetAll().Where(p => p.SubCategory_ID.Equals(model.subCategoryId));
-            if(model.yearMin != 0)
+            var manufacturers = uow.manufacture.GetAll();
+            var propertyValues = uow.propertyvalue.GetAll();
+            var properties = uow.property.GetAll();
+            var tFilters = ShowTypeFiltersForSubCategory(model.subCategoryId);
+            var sFilters = ShowSpecFiltersForSubCategory(model.subCategoryId);
+
+            if (model.yearMin != 0)
             {
                 products = products.Where(p => (p.Model_Year.Year >= model.yearMin));
             }
@@ -53,7 +76,6 @@ namespace Services
             }
             if(model.typeFilters != null)
             {
-                var propertyValues = uow.propertyvalue.GetAll();
                 var typeFilters = from pv in propertyValues
                 join filter in model.typeFilters
                 on new { propertyId = pv.Property_ID, value = pv.Value } equals
@@ -80,8 +102,19 @@ namespace Services
                 }
 
             }
-            return products
-                .Select(p => new Product(p.Product_ID, "", p.Product_Name, p.Product_Image, p.Series, p.Model, p.Model_Year.Year, null)).ToList();
+            return products.Select(p =>
+                {
+                    var manufacturerName = manufacturers.Where(m => m.Manufacturer_ID.Equals(p.Manufacturer_ID)).Select(m => m.Manufacturer_Name).First();
+                    var props = propertyValues.Where(v => v.Product_ID.Equals(p.Product_ID)).ToList();
+                    var list = tFilters.Join(props, f => f.propertyId, pv => pv.Property_ID,
+                        (f, pv) => (f.typeName + ": " + pv.Value)).ToList();
+                    var productValues = new List<string>();
+                    productValues.AddRange(list);
+                    list = sFilters.Join(props, f => f.propertyId, pv => pv.Property_ID,
+                        (f, pv) => (f.propertyName + ": " + pv.Value)).ToList();
+                    productValues.AddRange(list);
+                    return new Product(p.Product_ID, manufacturerName, p.Product_Name, p.Product_Image, p.Series, p.Model, p.Model_Year.Year, productValues);
+                }).ToList();
         }
     }
 }

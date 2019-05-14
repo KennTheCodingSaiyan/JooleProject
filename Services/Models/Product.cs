@@ -14,9 +14,9 @@ namespace Services.Models
         public String Series { get; set; }
         public String Model { get; set; }
         public int modelYear { get; set; } 
-        Dictionary<int, int> propertyValues { get; set; }
+        public List<string> propertyValues { get; set; }
 
-        public Product(int productId, String manufacturerName, String productName, String productImage, String Series, String Model, int modelYear, Dictionary<int, int> propertyValues)
+        public Product(int productId, String manufacturerName, String productName, String productImage, String Series, String Model, int modelYear, List<string> propertyValues)
         {
             this.productId = productId;
             this.manufacturerName = manufacturerName;
