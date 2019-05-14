@@ -14,6 +14,7 @@ using System.Web.Services.Description;
 using Services;
 using System.Collections;
 using Repositories.Repositories;
+using System.Data;
 
 namespace Joole_MVC_Team1.Controllers
 {
@@ -30,7 +31,8 @@ namespace Joole_MVC_Team1.Controllers
             singledata = test.ReturnSingleData(4, 4);
             /*pass DPropertyID and SubCategoryID*/
             doubledata = test.ReturnDoubleData(6, 1);
-            test.ProductIDToAllPropertyID(2);
+            List<DataRow> test1 = test.ProductIDToAllPropertyID(2);
+            List<DataRow> test2 =
             test.SubCategoryIDToAllPropertyID(1);
             int testpoint = 0;
             /*******************************************/

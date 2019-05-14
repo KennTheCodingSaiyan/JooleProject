@@ -4,140 +4,237 @@
     ViewBag.Title = "Details";
 }
 
-<style>
-    th,td {
-        border:1px solid #dddddd; 
-        text-align:left; 
-        padding:8px;
+<script>
+    function displayDetails(evt, pd) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(pd).style.display = "block";
+        evt.currentTarget.className += " active";
     }
-    tr:nth-child(even){
-        background-color:#dddddd;
+
+/**/</script>
+
+<style>
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .tab {
+        overflow: hidden;
+        /*border: 1px solid #ccc;
+            background-color: #f1f1f1;*/
+    }
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #F8F8F8;
+            }
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        /*border: 1px solid #ccc;*/
+        border-top: none;
+    }
+
+    #alignh {
+        position: absolute;
+        width: 1000px;
+        px;
+        height: 1000px;
+        /*border: 1px solid black;*/
+        padding: 10px;
+    }
+
+        #alignh > div {
+            float: left;
+            margin: 10px;
+        }
+
+    #d1 {
+        width: 400px;
+        height: 400px;
+        /*border: 1px solid red;*/
+    }
+
+    #d2 {
+        width: 400px;
+        height: 400px;
+        /*border: 1px solid blue;*/
     }
 </style>
+<div class="tab">
+    <button class="tablinks" onclick="displayDetails(event, 'Product_Summary')">Product Summary</button>
+    <button class="tablinks" onclick="displayDetails(event, 'Product_Details')">Product Details</button>
+    <button class="tablinks" onclick="displayDetails(event, 'Product_Documentation')">Product Documentation</button>
+    <button class="tablinks" onclick="displayDetails(event, 'Contact')">Contact</button>
+</div>
+
 <h2>Product Summary</h2>
 
-    <hr />
+<hr />
 
-    <div class="row" style="display:flex; width : 50%;">
-        <div class="column" style="flex:70%;">
-            <table style="border-collapse:collapse">
+<div id="Product_Summary" class="row" style="display:flex; width : 50%;">
+    <div class="column" style="flex:70%;">
+        <table style="border-collapse:collapse">
 
-                <tr>
-                    <th colspan="2">DESCRIPTION</th>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.Manufacture)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.Manufacture)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.Series)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.Series)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.Model)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.Model)
-                    </td>
-                </tr>
-                <tr>
-                    <th colspan="2">TYPE</th>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.UseType)
-                    </td>
+            <tr>
+                <th colspan="2">DESCRIPTION</th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Manufacture)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.Manufacture)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Series)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.Series)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Model)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.Model)
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">TYPE</th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.UseType)
+                </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.UseType)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.Application)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.Application)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.MountingLoaction)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.MountingLoaction)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.Accessories)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.Accessories)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.ModelYear)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.ModelYear)
-                    </td>
-                </tr>
-            </table>
-       
-        </div>
+                <td>
+                    @Html.DisplayFor(model => model.UseType)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Application)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.Application)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.MountingLoaction)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.MountingLoaction)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Accessories)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.Accessories)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.ModelYear)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.ModelYear)
+                </td>
+            </tr>
+        </table>
 
-        <div class="column ">
-            <table>
-
-                <tr>
-                    <th colspan="2">TECHNICAL SPECIFICATION</th>
-                </tr>
-
-                <tr>
-                    <td>1<br /></td>
-                    <td>2<br /></td>
-                </tr>
-
-                <tr>
-                    <td>1<br /></td>
-                    <td>2<br /></td>
-                </tr>
-
-                <tr>
-                    <td>1<br /></td>
-                    <td>2<br /></td>
-                </tr>
-
-                <tr>
-                    <td>1<br /></td>
-                    <td>2<br /></td>
-                </tr>
-
-
-
-            </table>
-        </div>
     </div>
 
+    <div class="column ">
+        <table>
+
+            <tr>
+                <th colspan="2">TECHNICAL SPECIFICATION</th>
+            </tr>
+
+            @for (int i = 0; i < Model.techSpecList.Count(); i++)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => m.techSpecList[i].propertyName) <br />
+                    </td>
+                    @if (Model.techSpecList[i].isTypeSpec == false)
+                    {
+                        <td>@Html.DisplayFor(m => m.techSpecList[i].singleValue)<br /></td>
+                    }
+                    else
+                    {
+                        <th>Min</th>
+                        <td>@Html.DisplayFor(m => m.techSpecList[i].min)<br /></td>
+                        <th>Max</th>
+                        <td>@Html.DisplayFor(m => m.techSpecList[i].max)<br /></td>
+
+                    }
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+<div id="Product_Details" class="tabcontent">
+    <h3>Product Details</h3>
+    <!--insert a table-->
+    <p>hello2</p>
+</div>
+<div id="Product_Documentation" class="tabcontent">
+    <h3>Product Documentation</h3>
+    <!--insert a table-->
+    <p>hello3</p>
+</div>
+
+<div id="Contact" class="tabcontent">
+    <h3>Contact</h3>
+    <!--insert a table-->
+    <p>It is a secret !!!</p>
+</div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.productID }) |
-    @Html.ActionLink("Back to List", "Index")
+
 </p>

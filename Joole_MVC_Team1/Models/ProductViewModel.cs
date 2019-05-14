@@ -5,6 +5,8 @@ using System.Web;
 using DAL.Models;
 using Services;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
+using System.Collections;
 
 namespace Joole_MVC_Team1.Models
 {
@@ -22,8 +24,9 @@ namespace Joole_MVC_Team1.Models
             techSpecList = init_TechSpecList();
 
     */
-            techSpecList = init_TechSpecList();
+            
             productID = Int32.Parse(product.Product_ID.ToString());
+            techSpecList = init_TechSpecList();
             Manufacture = s.GetManufNameByID(Int32.Parse( product.Manufacturer_ID.ToString()));
             Series = product.Series.ToString();
             Model = product.Model.ToString();
@@ -59,7 +62,33 @@ namespace Joole_MVC_Team1.Models
         private List<TechSpecViewModel> init_TechSpecList()
         {
             List < TechSpecViewModel > res = new List<TechSpecViewModel>();
-            
+            GetProductsService test = new GetProductsService();
+
+            List<DataRow> test1 = test.ProductIDToAllPropertyID(this.productID);
+            List<DataRow> test2 = test.SubCategoryIDToAllPropertyID(this.productID);
+            foreach (DataRow dr in test1)
+            {
+                TechSpecViewModel Tsvm = new TechSpecViewModel();
+                Tsvm.propID = Convert.ToInt32(dr["Property_ID"]);
+                Tsvm.propertyName = Convert.ToString(dr["Property_Name"]);
+                Tsvm.isTypeSpec = false;
+                Tsvm.singleValue = Convert.ToString(dr["Value"]);
+                Tsvm.min = 0;
+                Tsvm.max = 0;
+                res.Add(Tsvm);
+            }
+
+            foreach (DataRow dr in test2)
+            {
+                TechSpecViewModel Tsvm = new TechSpecViewModel();
+                Tsvm.propID = Convert.ToInt32(dr["Property_ID"]);
+                Tsvm.propertyName = Convert.ToString(dr["Property_Name"]);
+                Tsvm.isTypeSpec = true;
+                Tsvm.singleValue = "";
+                Tsvm.min = Convert.ToDouble(dr["Min_Value"]);
+                Tsvm.max = Convert.ToDouble(dr["Max_Value"]);
+                res.Add(Tsvm);
+            }
             return res;
         }
 

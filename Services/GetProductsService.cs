@@ -132,7 +132,7 @@ namespace Services
             return datad;
         }
         /************Single based on ProductID to search all PropertyID**********/
-        public void ProductIDToAllPropertyID(int productid)
+        public List<DataRow> ProductIDToAllPropertyID(int productid)
         {
             foreach (DataRow row in getproducts.singletblreturn.Rows)
             {
@@ -141,9 +141,10 @@ namespace Services
                     singlevaluedata.Add(row);
                 }
             }
+            return singlevaluedata;
         }
         /************Single based on ProductID to search all PropertyID**********/
-        public void SubCategoryIDToAllPropertyID(int subcategoryid)
+        public List<DataRow> SubCategoryIDToAllPropertyID(int subcategoryid)
         {
             foreach (DataRow row in getproducts.doubletblreturn.Rows)
             {
@@ -152,6 +153,7 @@ namespace Services
                     doublevaluedata.Add(row);
                 }
             }
+            return doublevaluedata;
         }
     }
 }
