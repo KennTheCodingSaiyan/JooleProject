@@ -32,9 +32,12 @@ namespace Joole_MVC_Team1.Models
             MountingLoaction = "";
             Accessories = "With Lignt";
             ModelYear = product.Model_Year.Year.ToString();
+            Img = product.Product_Image.ToString();
         }
 
         [Key]
+        public string Img { get; set; }
+
         public int productID { get; set; }
 
         public string Manufacture { get; set; }

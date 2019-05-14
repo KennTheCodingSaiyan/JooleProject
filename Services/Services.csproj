@@ -132,6 +132,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="GetProductsService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="ProductDetail.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,8 +149,11 @@
     <Compile Include="Service_Taras.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Services.dll" />
+    <Content Include="bin\Services.pdb" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="obj\Debug\Services.csproj.FileListAbsolute.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -157,6 +161,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\Services.csproj.CoreCompileInputs.cache" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -177,6 +183,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\amd64\Microsoft.VC90.CRT\" />
+    <Folder Include="bin\roslyn\" />
+    <Folder Include="bin\x86\Microsoft.VC90.CRT\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
