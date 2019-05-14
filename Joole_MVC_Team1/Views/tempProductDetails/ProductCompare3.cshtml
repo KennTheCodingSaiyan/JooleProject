@@ -18,13 +18,29 @@
 <h2>Product Compare</h2>
 
 <div>
-    <div class="row" style="display:flex; width : 50%;">
+    <div class="row container" style="display:flex; width : 50%;">
         <div class="column" style="flex:70%;">
             <table style="border-collapse:collapse">
-
                 <tr>
-                    <th colspan="4">COMPARE</th>
+                    <th scope="row">
+
+                    </th>
+
+                    <th scope="row">
+                        <img src="@Url.Content(Model.pvm1.Img)" alt="IMAGES" />
+                    </th>
+
+                    <th scope="row">
+                        <img src="@Url.Content(Model.pvm2.Img)" alt="IMAGES" />
+
+                    </th>
+                    <th scope="row">
+                        <img src="@Url.Content(Model.pvm3.Img)" alt="IMAGES" />
+
+                    </th>
                 </tr>
+
+                <th colspan="4">Description</th>
                 <tr>
                     <td>
                         @Html.DisplayNameFor(model => model.pvm1.Manufacture)
@@ -175,7 +191,7 @@
         </div>
     </div>
 </div>
-<p>
+@*<p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+</p>*@
