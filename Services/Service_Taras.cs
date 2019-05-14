@@ -11,9 +11,16 @@ namespace Services
 
         public List<SubCategory> AutoCompleteSubCategories(String input, int categoryId)
         {
-            var list = uow.subCategory.GetAll().Where(s => s.Category_ID.Equals(categoryId) && s.SubCategory_Name.ToLower().Contains(input.ToLower())).
-                Select(s => new SubCategory(s.SubCategory_ID, s.Category_ID, s.SubCategory_Name)).ToList();
-            return list;
+            var tblSubCategories = uow.subCategory.GetAll();
+            if(categoryId != 0)
+            {
+                return tblSubCategories.Where(s => s.Category_ID.Equals(categoryId) && s.SubCategory_Name.ToLower().Contains(input.ToLower())).
+                    Select(s => new SubCategory(s.SubCategory_ID, s.Category_ID, s.SubCategory_Name)).ToList();
+            } else
+            {
+                return tblSubCategories.Where(s => s.SubCategory_Name.ToLower().Contains(input.ToLower())).
+                    Select(s => new SubCategory(s.SubCategory_ID, s.Category_ID, s.SubCategory_Name)).ToList();
+            }
         }
 
         public List<Category> ShowAllCategories()
@@ -38,6 +45,16 @@ namespace Services
                 .Select(filter => new TypeFilter(filter.Property_ID, filter.SubCategory_ID, filter.Type_Name, "", filter.Type_Options.Split(',').ToList()))
                 .ToList();
             return list;
+        }
+
+        public String getCategoryName(int categoryId)
+        {
+            return uow.category.GetByID(categoryId).Category_Name;
+        }
+
+        public String getSubCategoryName(int subCategoryId)
+        {
+            return uow.subCategory.GetByID(subCategoryId).SubCategory_Name;
         }
 
         public List<Product> getAllProductsByCriteria(SearchViewModel model)

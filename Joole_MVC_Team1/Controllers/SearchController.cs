@@ -29,7 +29,9 @@ namespace Joole_MVC_Team1.Controllers
         {
             var specFilters = service.ShowSpecFiltersForSubCategory(subCategoryId);
             var typeFilters = service.ShowTypeFiltersForSubCategory(subCategoryId);
-            var model = new SearchViewModel(subCategoryId, 0, 0, specFilters, typeFilters);
+            var categoryName = service.getCategoryName(categoryId);
+            var subCategoryName = service.getSubCategoryName(subCategoryId);
+            var model = new SearchViewModel(subCategoryId, 0, 0, categoryName, subCategoryName, specFilters, typeFilters);
             return View(model);
         }
 
