@@ -59,6 +59,10 @@
     width: 80px;
 }
 
+.spec-title > label {
+    width: 100px;
+}
+
 .buttons-section {
     border-bottom: 1px solid gray;
     padding: 10px;
@@ -89,7 +93,7 @@
 
 .slider {
     display: inline-block;
-    width: 200px;
+    min-width: 200px;
 }
 
 #subCategory {
@@ -110,12 +114,18 @@
     border-radius: 5px;
     text-align: center;
     min-width: 220px;
+    min-height: 430px;
 }
 
 .product-title {
     font-weight: bold;
     padding-bottom: 10px;
     padding-top: 5px;
+}
+
+.product-image {
+    max-height: 250px;
+    max-width: 200px;
 }
 
 .product-image:hover {

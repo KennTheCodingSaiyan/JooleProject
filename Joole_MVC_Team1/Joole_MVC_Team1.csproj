@@ -161,6 +161,7 @@
     <Content Include="Images\laptop_1.png" />
     <Content Include="Images\laptop_2.png" />
     <Content Include="Images\laptop_3.png" />
+    <Content Include="Images\laptop_4.png" />
     <Content Include="Images\tablet_1.png" />
     <Content Include="Images\vacuum_cleaner_1.png" />
     <Content Include="obj\Debug\Joole_MVC_Team1.csproj.FileListAbsolute.txt" />

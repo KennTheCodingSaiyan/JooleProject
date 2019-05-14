@@ -7,9 +7,9 @@
                 @foreach (var item in row)
                 {
 
-                    <div class="product-col col-sm-3">
+                    <div class="product-col col-sm-3 col-md-3">
                         <div>
-                            <img width="200" class="product-image" id="@Html.DisplayFor(modelItem => item.productId)-productImage" src="@Html.DisplayFor(modelItem => item.productImage)" />
+                            <img class="product-image" id="@Html.DisplayFor(modelItem => item.productId)-productImage" src="@Html.DisplayFor(modelItem => item.productImage)" />
                         </div>
                         <div class="product-title">
                             <div>@Html.DisplayFor(modelItem => item.manufacturerName) @Html.DisplayFor(modelItem => item.productName)</div>
@@ -29,4 +29,8 @@
                     </div>
                 }
             </div>
+        }
+        @if(!Model.Any())
+        {
+            <div>No results found</div>
         }
