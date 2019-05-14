@@ -29,6 +29,23 @@
         updateProducts();
     })
 
+    $("#compareButton").on("click", function () {
+        let ids = $(".compare:checked").map(function () { return $(this).val(); }).get();
+        if (ids.length == 2) {
+            window.location.href = "/ProductDetails/ProductCmp2/" + ids[0] + "/" + ids[1];
+        }
+        if (ids.length == 3) {
+            window.location.href = "/ProductDetails/ProductCmp3/" + ids[0] + "/" + ids[1] + "/" + ids[2];
+        }
+    })
+
+    $("#products").on("click", function (e) {
+        if (e.target.tagName == 'IMG') {
+            let id = e.target.id.substring(0, e.target.id.indexOf('-'));
+            window.location.href = "/tempProductDetails/Details/" + id;
+        }
+    })
+
     $(".dropdown-search").on('show.bs.dropdown', function () {
         $.ajax({
             type: "GET",

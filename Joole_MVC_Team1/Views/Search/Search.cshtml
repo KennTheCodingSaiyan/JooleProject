@@ -8,7 +8,7 @@
     <input type="hidden" id="subCategoryId" value="@Model.subCategoryId" />
     <div class="col-sm-3 search-section">
         <div class="buttons-section">
-            <button type="button" class="btn btn-primary">Compare</button>
+            <button type="button" id="compareButton" class="btn btn-primary">Compare</button>
         </div>
         <div class="spec-title">
             @foreach (var filter in Model.typeFilters)
@@ -42,8 +42,7 @@
             }
         </div>
     </div>
-    <div class="col-sm-9">
-        <div id="products"></div>
+    <div class="col-sm-9" id="products">
     </div>
 </div>
 
