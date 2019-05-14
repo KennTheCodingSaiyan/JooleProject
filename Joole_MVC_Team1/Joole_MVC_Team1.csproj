@@ -173,6 +173,7 @@
     <Content Include="obj\Debug\Joole_MVC_Team1.csproj.CopyComplete" />
     <Content Include="obj\Debug\Joole_MVC_Team1.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\Joole_MVC_Team1.csprojAssemblyReference.cache" />
+    <Content Include="Scripts\custom.js" />
     <Content Include="Views\tempProductDetails\Details.cshtml" />
     <Content Include="Views\tempProductDetails\ProductCompare2.cshtml" />
     <Content Include="Views\tempProductDetails\ProductCompare3.cshtml" />
