@@ -32,7 +32,7 @@ namespace Joole_MVC_Team1.Controllers
             //    return HttpNotFound();
             //}
             //return View(customer);
-            id = 1;
+       
             //tblProduct product = new Service().getProductService((int)id);
             ProductViewModel pvm = new ProductViewModel((int)id);
             return View(pvm);
@@ -48,8 +48,7 @@ namespace Joole_MVC_Team1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            id1 = 1;
-            id2 = 2;
+         
          
 
             return View(new ProductCmpViewModel((int)id1, (int)id2));
@@ -71,9 +70,7 @@ namespace Joole_MVC_Team1.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            id1 = 1;
-            id2 = 2;
-            id3 = 3;
+          
 
             return View(new ProductCmpViewModel((int)id1, (int)id2, (int)id3));
 
