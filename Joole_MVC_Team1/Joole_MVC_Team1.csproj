@@ -136,6 +136,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\tempProductDetailsController.cs" />
     <Compile Include="Controllers\UserLoginController.cs" />
+    <Compile Include="Extensions\ArrayExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
