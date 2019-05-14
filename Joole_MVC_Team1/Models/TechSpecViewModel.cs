@@ -9,20 +9,21 @@ namespace Joole_MVC_Team1.Models
 {
     public class TechSpecViewModel
     {
-        public TechSpecViewModel(int PropID)
+        public TechSpecViewModel()
         {
-            Service s = new Service();
-            
+
 
         }
 
         public string propertyName { get; set; }
 
         public bool isTypeSpec { get; set; }
-        public double singleValue { get; set; }
+        public string singleValue { get; set; }
 
         public double min  { get; set; }
 
         public double max { get; set; }
+
+        public int propID { get; set; }
     }
 }
