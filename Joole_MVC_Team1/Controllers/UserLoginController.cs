@@ -23,18 +23,7 @@ namespace Joole_MVC_Team1.Controllers
         // UserLogin
         public ActionResult LoginPage(string userIDInfo, string passwordInfo)
         {
-            // test service layer
-            GetProductsService test = new GetProductsService();
-            ArrayList singledata;
-            ArrayList doubledata;
-            /*****pass SPropertyID and ProductID*****/
-            singledata = test.ReturnSingleData(4, 4);
-            /*pass DPropertyID and SubCategoryID*/
-            doubledata = test.ReturnDoubleData(6, 1);
-            List<DataRow> test1 = test.ProductIDToAllPropertyID(2);
-            List<DataRow> test2 =
-            test.SubCategoryIDToAllPropertyID(1);
-            int testpoint = 0;
+            
             /*******************************************/
             // if all the inputs are null keep the login page
 
