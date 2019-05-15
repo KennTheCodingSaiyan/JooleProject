@@ -38,9 +38,9 @@ namespace Services
                 }
                 else
                 {
-                    if (i > 0)
+                    if (LoginInfo != null)
                     {
-                        i--;
+                        ;
                     }
                     else
                     {
