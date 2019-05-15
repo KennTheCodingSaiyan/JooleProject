@@ -53,7 +53,7 @@ namespace Joole_MVC_Team1.Controllers
             InsertDataToDatabase IDToD = new InsertDataToDatabase(UserName, Email_Address, Password);
             IDToD.InsertAction();
             // need to return to Login page
-            return Content("Sign Up successfully !");
+            return RedirectToAction("LoginPage","UserLogin");
         }
     }
 }
