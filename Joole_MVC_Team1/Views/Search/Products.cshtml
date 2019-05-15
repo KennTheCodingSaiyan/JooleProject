@@ -9,7 +9,9 @@
 
                     <div class="product-col col-sm-3 col-md-3">
                         <div>
-                            <img class="product-image" id="@Html.DisplayFor(modelItem => item.productId)-productImage" src="@Html.DisplayFor(modelItem => item.productImage)" />
+                            <a href="/tempProductDetails/Details/@Html.DisplayFor(modelItem => item.productId)">
+                                <img class="product-image" id="@Html.DisplayFor(modelItem => item.productId)-productImage" src="@Html.DisplayFor(modelItem => item.productImage)" />
+                            </a>
                         </div>
                         <div class="product-title">
                             <div>@Html.DisplayFor(modelItem => item.manufacturerName) @Html.DisplayFor(modelItem => item.productName)</div>
