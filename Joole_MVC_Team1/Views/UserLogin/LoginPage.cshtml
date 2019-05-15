@@ -3,7 +3,7 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
+
 
 <html>
 <head>
@@ -15,19 +15,26 @@
 </head>
 <body style="overflow:hidden;">
     <div class="color-gradient">
+
         <!--configure the popup form-->
+        
+        
+        
         <div id="abc">
+
+
             <div style="height:330px; width:400px; background-color:azure; opacity: .80;" id="popupContact">
-                <form style="height:330px; width:400px; background-color:white;" action="#" method="post" name="form">
-                    <fieldset style="background-color:azure;">
+                @using (Html.BeginForm("LoginPage", "UserLogin", FormMethod.Post))
+                {
+                    <form style="height:330px; width:400px; background-color:white;" name="form">
                         <p style="font-size:larger; float:left">Register as User</p>
-                        <span id='close' >x</span>
+                        <span id='close'>x</span>
                         <br />
                         <br />
                         <hr>
                         <!--Upload the image part-->
                         <label></label>
-                        <img id="image-preview" class="circular-img"src="">
+                        <img id="image-preview" class="circular-img" src="">
                         <input style="display:none" id="input-image-hidden" onchange="document.getElementById('image-preview').src = window.URL.createObjectURL(this.files[0])" type="file" accept="image/jpeg, image/png"><br />
                         <label></label>
                         <button onclick="HandleBrowseClick('input-image-hidden');">UPLOAD IMAGE</button>
@@ -35,19 +42,20 @@
                         <label>UserName:</label>
                         <input name="UserName" placeholder="UserName" type="text"><br />
                         <label>Email Address:</label>
-                        <input name="Email Address" placeholder="Email Address" type="text"><br />
+                        <input name="Email_Address" placeholder="Email Address" type="text"><br />
                         <label>Password:</label>
                         <input name="Password" placeholder="Password" type="text"><br />
                         <label>Confirm Password:</label>
-                        <input name="Confirm Password" placeholder="Confirm Password" type="text"><br />
+                        <input name="Confirm_Password" placeholder="Confirm Password" type="text"><br />
                         <hr>
-                        <input type="button" value="Sign Up" style="float:right" />
-                    </fieldset>
-                </form>
+                        <input type="submit" value="Sign Up" style="float:right" />
+                    </form>
+                }
             </div>
         </div>
+
         <!---->
-        <button id="Sign Up" onclick="popUp_show()" align="right">Popup</button>
+        <button id="Sign Up" onclick="popUp_show()" align="right">SignUp</button>
 
         <form action="/UserLogin/LoginPage">
 

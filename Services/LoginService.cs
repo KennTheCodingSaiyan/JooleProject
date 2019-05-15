@@ -25,6 +25,7 @@ namespace Services
             //int intR = Convert.ToInt32(SPasswd);
             /* TryParse is more efficient*/
             int.TryParse(SPasswd, out intR);
+            int i = 4;
             // search using the .ToList instead of GetByID saving time
             foreach (tblUser LoginInfo in uow.consumer.GetAll().ToList())
             {
@@ -37,7 +38,15 @@ namespace Services
                 }
                 else
                 {
-                    return ReturnValue;
+                    if (i > 0)
+                    {
+                        i--;
+                    }
+                    else
+                    {
+                        return ReturnValue;
+                    }
+                    
                 }
             }            
             /*convert string to byte[] */
