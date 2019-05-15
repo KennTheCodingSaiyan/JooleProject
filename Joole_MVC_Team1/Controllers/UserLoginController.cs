@@ -14,6 +14,7 @@ using System.Web.Services.Description;
 using Services;
 using System.Collections;
 using Repositories.Repositories;
+using Services.Models;
 
 namespace Joole_MVC_Team1.Controllers
 {
@@ -22,17 +23,7 @@ namespace Joole_MVC_Team1.Controllers
         // UserLogin
         public ActionResult LoginPage(string userIDInfo, string passwordInfo)
         {
-            // test service layer
-            GetProductsService test = new GetProductsService();
-            ArrayList singledata;
-            ArrayList doubledata;
-            /*****pass SPropertyID and ProductID*****/
-            singledata = test.ReturnSingleData(4, 4);
-            /*pass DPropertyID and SubCategoryID*/
-            doubledata = test.ReturnDoubleData(6, 1);
-            test.ProductIDToAllPropertyID(2);
-            test.SubCategoryIDToAllPropertyID(1);
-            int testpoint = 0;
+
             /*******************************************/
             // if all the inputs are null keep the login page
 
@@ -42,7 +33,7 @@ namespace Joole_MVC_Team1.Controllers
             }
             Services.Service LoginTrueOrFalse = new Services.Service();
             bool LoginDetermine = LoginTrueOrFalse.LoginService(userIDInfo, passwordInfo);
-            // based on the return bool value to choose which page to go
+            //based on the return bool value to choose which page to go
             if (LoginDetermine == false)
             {
                 return View();
@@ -51,10 +42,18 @@ namespace Joole_MVC_Team1.Controllers
             {
                 // this part should be the redirection page
                 /* 
-                 
+
                  */
                 return RedirectToAction("SearchPage", "Search");
             }
+        }
+        [HttpPost]
+        public ActionResult LoginPage(string UserName, string Email_Address, string Password, string Confirm_Password)
+        {
+            InsertDataToDatabase IDToD = new InsertDataToDatabase(UserName, Email_Address, Password);
+            IDToD.InsertAction();
+            // need to return to Login page
+            return Content("Sign Up successfully !");
         }
     }
 }
