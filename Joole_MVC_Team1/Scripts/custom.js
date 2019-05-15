@@ -39,13 +39,6 @@
         }
     })
 
-    $("#products").on("click", function (e) {
-        if (e.target.tagName == 'IMG') {
-            let id = e.target.id.substring(0, e.target.id.indexOf('-'));
-            window.location.href = "/tempProductDetails/Details/" + id;
-        }
-    })
-
     $(".dropdown-search").on('show.bs.dropdown', function () {
         $.ajax({
             type: "GET",
