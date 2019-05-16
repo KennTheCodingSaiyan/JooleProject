@@ -13,8 +13,11 @@
             slide: function (event, ui) {
                 $(this).prev()[0].textContent = ui.values[0];
                 $(this).next()[0].textContent = ui.values[1];
+            },
+            change: function (event, ui) {
                 updateProducts();
             }
+
         });
     });
 
@@ -24,6 +27,16 @@
 
     $(".model-year").change(function () {
         updateProducts();
+    })
+
+    $("#compareButton").on("click", function () {
+        let ids = $(".compare:checked").map(function () { return $(this).val(); }).get();
+        if (ids.length == 2) {
+            window.location.href = "/ProductDetails/ProductCmp2/" + ids[0] + "/" + ids[1];
+        }
+        if (ids.length == 3) {
+            window.location.href = "/ProductDetails/ProductCmp3/" + ids[0] + "/" + ids[1] + "/" + ids[2];
+        }
     })
 
     $(".dropdown-search").on('show.bs.dropdown', function () {
