@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Joole_MVC_Team1.Controllers
 {
+    [HandleError(ExceptionType = typeof(System.Data.SqlClient.SqlException), View = "Error")]
     public class SearchController : Controller
     {
         Service service = new Service();
