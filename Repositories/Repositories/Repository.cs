@@ -51,7 +51,7 @@ namespace Repositories.Repositories
         {
             return context.Set<TEntity>().ToList();
         }
-
+     
         public TEntity GetByID(int id)
         {
             //throw new NotImplementedException();
