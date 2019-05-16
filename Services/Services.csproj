@@ -132,6 +132,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="GetProductsService.cs" />
+    <Compile Include="InsertDataToDatabase.cs" />
+    <Compile Include="LoginService.cs" />
     <Compile Include="ProductDetail.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
