@@ -3,195 +3,205 @@
 @{
     ViewBag.Title = "ProductCompare3";
 }
-    <style>
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+<style>
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
 
-<h2>Product Compare</h2>
+@*Redo the layout to Apply Responsive layout using Boostrap grid - Nanyan Jiang*@
 
-<div>
-    <div class="row container" style="display:flex; width : 50%;">
-        <div class="column" style="flex:70%;">
-            <table style="border-collapse:collapse">
-                <tr>
-                    <th scope="row">
 
-                    </th>
 
-                    <th scope="row">
-                        <img src="@Url.Content(Model.pvm1.Img)" alt="IMAGES" />
-                    </th>
-
-                    <th scope="row">
-                        <img src="@Url.Content(Model.pvm2.Img)" alt="IMAGES" />
+    <div class="container-fluid">
+        <table class="table table-bordered">
+            <div class="row inline">
+                <div class="row">
+                    <th>
 
                     </th>
-                    <th scope="row">
-                        <img src="@Url.Content(Model.pvm3.Img)" alt="IMAGES" />
-
-                    </th>
-                </tr>
-
-                <th colspan="4">Description</th>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.pvm1.Manufacture)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm1.Manufacture)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm2.Manufacture)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm3.Manufacture)
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.pvm1.Series)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm1.Series)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm2.Series)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm3.Series)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.pvm1.Model)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm1.Model)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm2.Model)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm3.Model)
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <th colspan="4">TYPE</th>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.pvm1.UseType)
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(model => model.pvm1.UseType)
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(model => model.pvm2.UseType)
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(model => model.pvm3.UseType)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.pvm1.Application)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm1.Application)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm2.Application)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm3.Application)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.pvm1.MountingLoaction)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm1.MountingLoaction)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm2.MountingLoaction)
-                    </td>
-
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm3.MountingLoaction)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.pvm1.Accessories)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm1.Accessories)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm2.Accessories)
-                    </td>
-
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm3.Accessories)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.pvm1.ModelYear)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm1.ModelYear)
-                    </td>
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm2.ModelYear)
-                    </td>
-
-                    <shadow></shadow>
-                    <td>
-                        @Html.DisplayFor(model => model.pvm3.ModelYear)
-                    </td>
-                </tr>
-            </table>
-
+                </div>
+            <div class="row">
+                    <div class="col inline">
+                           <th>
+                                <img src="@Url.Content(Model.pvm1.Img)" alt="IMAGES" class="img-fluid img-thumbnail" width="300" height="200" />
+                            </th>
+                         </div>
+                </div>
+                    <div class="col inline">
+                        <th>
+                             <img src="@Url.Content(Model.pvm2.Img)" alt="IMAGES" class="img-fluid img-thumbnail" width="300" height="200" />
+                        </th>
+                        </div>
+               
+                    <div class="col inline">
+                        <th>
+                             <img src="@Url.Content(Model.pvm3.Img)" alt="IMAGES" class="img-fluid img-thumbnail" width="300" height="200" />
+                        </th>
+                    </div>
         </div>
+       
+       <tr>
+        <th colspan="4">Description</th>
+        </tr>
+        <tr>
+
+            <td>
+                @Html.DisplayNameFor(model => model.pvm1.Manufacture)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm1.Manufacture)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm2.Manufacture)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm3.Manufacture)
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.pvm1.Series)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm1.Series)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm2.Series)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm3.Series)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.pvm1.Model)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm1.Model)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm2.Model)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm3.Model)
+            </td>
+        </tr>
+
+
+        <tr>
+            <th colspan="4">TYPE</th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.pvm1.UseType)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.pvm1.UseType)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.pvm2.UseType)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.pvm3.UseType)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.pvm1.Application)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm1.Application)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm2.Application)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm3.Application)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.pvm1.MountingLoaction)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm1.MountingLoaction)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm2.MountingLoaction)
+            </td>
+
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm3.MountingLoaction)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.pvm1.Accessories)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm1.Accessories)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm2.Accessories)
+            </td>
+
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm3.Accessories)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.pvm1.ModelYear)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm1.ModelYear)
+            </td>
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm2.ModelYear)
+            </td>
+
+            <shadow></shadow>
+            <td>
+                @Html.DisplayFor(model => model.pvm3.ModelYear)
+            </td>
+        </tr>
+        </table>
+
     </div>
 </div>
+
 @*<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>*@
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

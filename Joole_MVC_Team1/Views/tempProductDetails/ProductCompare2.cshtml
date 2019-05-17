@@ -14,15 +14,161 @@
             background-color: #dddddd;
         }
     </style>
-<h2>Product Compare</h2>
 
-<div>
-    
-    <hr />
-    <div class="nav inline">
+
+  
+        <hr />
+        <div class="nav inline">
+
+        </div>
+
+        @*Redo the layout to Apply Responsive layout using Boostrap grid - Nanyan Jiang*@
+<div class="container-fluid">
+    <table class="table table-bordered" >
+        <div class="row inline">
+            <div class="row">
+                <th>
+
+                </th>
+            </div>
+            <div class="row">
+                <div class="col inline">
+                    
+                    <div class="card">
+                        <th>
+                             <img src="@Url.Content(Model.pvm1.Img)" alt="IMAGES" class="img-fluid img-thumbnail" width="300" height="200" />
+                        </th>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col inline">
+                    <th>
+                    <img src="@Url.Content(Model.pvm2.Img)" alt="IMAGES" class="img-fluid img-thumbnail" width="300" height="200" />
+                    </th>
+                        </div>
+            </div>
+
+            <tr>
+                <th colspan="3">Description</th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.pvm1.Manufacture)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm1.Manufacture)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm2.Manufacture)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.pvm1.Series)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm1.Series)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm2.Series)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.pvm1.Model)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm1.Model)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm2.Model)
+                </td>
+            </tr>
+
+
+            <tr>
+                <th colspan="3">TYPE</th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.pvm1.UseType)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.pvm1.UseType)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.pvm2.UseType)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.pvm1.Application)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm1.Application)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm2.Application)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.pvm1.MountingLoaction)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm1.MountingLoaction)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm2.MountingLoaction)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.pvm1.Accessories)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm1.Accessories)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm2.Accessories)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.pvm1.ModelYear)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm1.ModelYear)
+                </td>
+                <shadow></shadow>
+                <td>
+                    @Html.DisplayFor(model => model.pvm2.ModelYear)
+                </td>
+            </tr>
+    </table>
 
     </div>
-    <div class="row container" style="display:flex; width :50%;">
+</div>
+   
+    @*the original table structure*@ 
+    @*<div class="row container" style="display:flex; width :50%;">
         <div class="column" style="flex:70%;">
             <table style="border-collapse:collapse;">
                 <tr>
@@ -157,7 +303,7 @@
 
         </div>
     </div>
-</div>
+</div>*@
 
 @*<p>
    

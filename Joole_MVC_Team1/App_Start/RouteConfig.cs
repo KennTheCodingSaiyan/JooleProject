@@ -14,10 +14,21 @@ namespace Joole_MVC_Team1
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-    name: "Search",
-    url: "Search/Search/{categoryId}/{subCategoryId}",
-    new { controller = "Search", action = "Search" }
+                name: "Search",
+                url: "Search/Search/{categoryId}/{subCategoryId}",
+                new { controller = "Search", action = "Search" }
 );
+            routes.MapRoute(
+                name: "CompareTwo",
+                url: "{controller}/{action}/{id1}/{id2}",
+                defaults: new { controller = "tempProductDetailsController", action = "ProductCompare2" }
+                );
+
+            routes.MapRoute(
+                name: "CompareThree",
+                url: "{controller}/{action}/{id1}/{id2}/{id3}",
+                defaults: new { controller = "tempProductDetailsController", action = "ProductCompare3" }
+                );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
